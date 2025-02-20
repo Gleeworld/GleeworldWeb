@@ -2,9 +2,9 @@ import React from 'react'
 import Section from '@/components/sectionHeader/section';
 import MedfinderPromo from '@/components/Medfinder/MedfinderPromo';
 
-type Props = {};
+//type Props = {};
 
-function page({}: Props) {
+function page({}) {
   return (
     <div className='bg-orange-50'>
         <Section title='medfinder' />

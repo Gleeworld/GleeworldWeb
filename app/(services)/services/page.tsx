@@ -4,9 +4,9 @@ import MedfinderPromo from '@/components/Medfinder/MedfinderPromo';
 import ServiceList from "@/components/ServiceList/ServiceList";
 import Accordion from '@/components/FAQ/Accordion';
 
-type Props = {};
+//type Props = {};
 
-const page = (props: string) => {
+const page = () => {
   return (
     <div>
      <Section title='Services' />

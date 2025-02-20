@@ -5,9 +5,9 @@ import Timeline from "@/components/Timeline/Timeline";
 import HealthcareFeatures from '@/components/Healthcare/Healthcare';
 import Image from 'next/image';
 
-type Props = {}
+//type Props = {}
 
-function page({}: Props) {
+function page({}) {
   return (
     <div>
         <Section title='about us' />
@@ -31,7 +31,7 @@ function page({}: Props) {
             <div className="md:w-1/2">
                 <h2 className="text-3xl font-bold">Mission Statement</h2>
                 <p className="mt-4 text-gray-700">
-                    We are reinventing the pharmacy from a "shop" to a "primary care center." By improving access to affordable medicines and primary care for all in Nigeria, 
+                    We are reinventing the pharmacy from a shop to a primary care center. By improving access to affordable medicines and primary care for all in Nigeria, 
                     we ensure better healthcare through Artificial Intelligence (AI) technology and a patient-centered approach.
                 </p>
             </div>

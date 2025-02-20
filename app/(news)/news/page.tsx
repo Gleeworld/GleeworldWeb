@@ -5,9 +5,9 @@ import ContactForm from '@/components/Contact/ContactForm';
 
 
 
-type Props = {};
+//type Props = {};
 
-function page({}: Props) {
+function page({}) {
   return (
     <div>
         <Section title='News' />

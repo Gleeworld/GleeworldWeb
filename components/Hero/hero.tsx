@@ -1,6 +1,6 @@
 //import Image from 'next/image';
-import heroImage from "./Group 71.png"
-
+//import heroImage from "./Group 71.png"
+import Image from "next/image";
 
 export default function Hero() {
   return (
@@ -21,7 +21,7 @@ export default function Hero() {
             </button>
           </div>
           <div className="lg:w-1/2">
-            <img
+            <Image
               src="./Group 71.png"
               alt="Medication Access Illustration"
               width={600}
