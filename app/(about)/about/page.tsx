@@ -28,7 +28,7 @@ function page({}) {
 
         {/* Mission Statement Section */}
         <div className="bg-orange-50 py-12 px-6 flex flex-col md:flex-row items-center">
-            <div className="md:w-1/2">
+            <div className="md:w-1/2 px-10">
                 <h2 className="text-3xl font-bold">Mission Statement</h2>
                 <p className="mt-4 text-gray-700">
                     We are reinventing the pharmacy from a shop to a primary care center. By improving access to affordable medicines and primary care for all in Nigeria, 
@@ -58,15 +58,15 @@ function page({}) {
             <div className="mt-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-5xl mx-auto">
                 {/* Team Member 1 */}
                 <div className="bg-white shadow-lg p-4 rounded-lg">
-                    <Image src="/" width={200} height={200} className="rounded-full mx-auto" alt="CEO" />
-                    <h3 className="mt-4 text-lg font-semibold">John Doe</h3>
+                    <Image src="/FrameBidemi.png" width={200} height={200} className="rounded-full mx-auto" alt="CEO" />
+                    <h3 className="mt-4 text-lg font-semibold">Bidemi OJO</h3>
                     <p className="text-gray-600">Founder & CEO</p>
                 </div>
 
                 {/* Team Member 2 */}
                 <div className="bg-white shadow-lg p-4 rounded-lg">
-                    <Image src="/" width={200} height={200} className="rounded-full mx-auto" alt="COO" />
-                    <h3 className="mt-4 text-lg font-semibold">Jane Smith</h3>
+                    <Image src="/FrameBimbo.png" width={200} height={200} className="rounded-full mx-auto" alt="COO" />
+                    <h3 className="mt-4 text-lg font-semibold">Bimpe OJO</h3>
                     <p className="text-gray-600">Chief Operating Officer</p>
                 </div>
 
