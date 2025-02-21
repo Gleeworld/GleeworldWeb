@@ -6,7 +6,7 @@ export default function Services() {
         id: '1',
         title: 'Telepharmacy Services',
         description: 'Receive expert healthcare advice from the comfort of your home. Consult remotely with our professional pharmacists.',
-        image: './Frame 427319431.png',
+        image: '/Frame 427319431.png',
         linkText: 'Chat Now',
         linkUrl: '/services/telepharmacy'
       },
@@ -14,7 +14,7 @@ export default function Services() {
         id: '2',
         title: 'Delivery Services',
         description: 'Order medications for yourself, your family, or your employees with ease. Never miss a dose again.',
-        image: './Frame 427319431 (1).png',
+        image: '/Frame 427319431 (1).png',
         linkText: 'Submit Order',
         linkUrl: '/services/delivery'
       },
@@ -22,7 +22,7 @@ export default function Services() {
         id: '3',
         title: 'Pharmaceutical Distribution',
         description: 'We are a trusted partner for independent pharmacies across Nigeria.',
-        image: './Frame 427319431 (2).png',
+        image: '/Frame 427319431 (2).png',
         linkText: 'Submit Order',
         linkUrl: '/services/distribution'
       }

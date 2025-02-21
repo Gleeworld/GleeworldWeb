@@ -58,14 +58,14 @@ function page({}) {
             <div className="mt-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-5xl mx-auto">
                 {/* Team Member 1 */}
                 <div className="bg-white shadow-lg p-4 rounded-lg">
-                    <Image src="/team1.jpg" width={200} height={200} className="rounded-full mx-auto" alt="CEO" />
+                    <Image src="/" width={200} height={200} className="rounded-full mx-auto" alt="CEO" />
                     <h3 className="mt-4 text-lg font-semibold">John Doe</h3>
                     <p className="text-gray-600">Founder & CEO</p>
                 </div>
 
                 {/* Team Member 2 */}
                 <div className="bg-white shadow-lg p-4 rounded-lg">
-                    <Image src="/team2.jpg" width={200} height={200} className="rounded-full mx-auto" alt="COO" />
+                    <Image src="/" width={200} height={200} className="rounded-full mx-auto" alt="COO" />
                     <h3 className="mt-4 text-lg font-semibold">Jane Smith</h3>
                     <p className="text-gray-600">Chief Operating Officer</p>
                 </div>

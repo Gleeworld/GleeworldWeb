@@ -13,7 +13,6 @@ const page = () => {
       <ServiceList />
       <Accordion />
       <MedfinderPromo />
-
     </div>
   )
 }

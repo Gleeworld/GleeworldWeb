@@ -1,8 +1,8 @@
 import Hero from '../components/Hero/hero';
 import Services from '../components/Services/services';
 import Stats from '../components/Stats/stats';
- import NewsSection from '@/components/News/NewsSection';
- import ContactForm from '@/components/Contact/ContactForm';
+import NewsSection from '@/components/News/NewsSection';
+import ContactForm from '@/components/Contact/ContactForm';
 //import NewsLetter from '@/components/NewsLetter/newsForm';
 //import Footer from '@/components/Footer/footer';
 import MedfinderPromo from '@/components/Medfinder/MedfinderPromo';

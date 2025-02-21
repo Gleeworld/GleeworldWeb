@@ -65,7 +65,7 @@ const Navbar = () => {
           <li className="text-gray-700 hover:text-orange-500 cursor-pointer"  onClick={() => router.push("/medfinderapp")}>Medfinder App</li>
           <li className="text-gray-700 hover:text-orange-500 cursor-pointer"  onClick={() => router.push("/news")}>News</li>
           <li className="text-gray-700 hover:text-orange-500 cursor-pointer"  onClick={() => router.push("/about")}>About Us</li>
-          <div className="flex items-center space-x-3">
+          <li className="flex items-center space-x-3">
             <p className="text-gray-700 font-medium">Chat with Pharmacist</p>
             <Image
               src="/logos_whatsapp-icon.png"
@@ -74,7 +74,7 @@ const Navbar = () => {
               height={30}
               className="cursor-pointer"
             />
-          </div>
+          </li>
         </ul>
       </div>
     </header>

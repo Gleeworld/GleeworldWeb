@@ -22,7 +22,7 @@ export default function Hero() {
           </div>
           <div className="lg:w-1/2">
             <Image
-              src="./Group 71.png"
+              src="/Group 71.png"
               alt="Medication Access Illustration"
               width={600}
               height={500}
