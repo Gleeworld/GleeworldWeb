@@ -10,7 +10,7 @@ import ContactForm from '@/components/Contact/ContactForm';
 function page({}) {
   return (
     <div>
-        <Section title='News' />
+        <Section />
 
         <div>
             <div className=' flex-col text-center items-center gap-5 pt-15'>
