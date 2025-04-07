@@ -21,16 +21,16 @@ const Footer = () => {
           <div>
             <h2 className="text-lg font-bold mb-3">Follow Us</h2>
             <div className="flex space-x-4">
-              <a href="#" className="hover:opacity-75">
+              <a href="https://www.facebook.com/GleeworldCares/" className="hover:opacity-75">
                 <Image src="/ic_sharp-facebook.png" alt="Facebook" width={30} height={30} />
               </a>
-              <a href="#" className="hover:opacity-75">
+              <a href="https://www.twitter.com/GleeworldCares/" className="hover:opacity-75">
                 <Image src="/ri_twitter-x-line.png" alt="Twitter" width={30} height={30} />
               </a>
-              <a href="#" className="hover:opacity-75">
+              <a href="https://www.instagram.com/GleeworldCares/" className="hover:opacity-75">
                 <Image src="/ri_instagram-fill.png" alt="Instagram" width={30} height={30} />
               </a>
-              <a href="#" className="hover:opacity-75">
+              <a href="https://www.linkedin.com/company/gleeworld-pharmacy/" className="hover:opacity-75">
                 <Image src="/formkit_linkedin.png" alt="linkedIn" width={30} height={30} />
               </a>
 
