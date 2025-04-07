@@ -1,6 +1,7 @@
-m"use client"
+"use client"
 
-import { useEffect, useRef } from "react"
+import { useEffect, useRef } from "react";
+import { useRouter } from "next/navigation";
 
 export default function HeroSection() {
   const canvasRef = useRef<HTMLCanvasElement>(null)
@@ -76,7 +77,7 @@ export default function HeroSection() {
       <canvas ref={canvasRef} className="absolute inset-0 w-full h-full" style={{ zIndex: 0 }} />
 
       {/* Content */}
-      <div className="relative z-10 flex flex-col items-center justify-end w-full h-full text-center px-4">
+      <div className="relative z-10 flex flex-col items-center justify-around w-full h-full text-center px-4">
         <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white drop-shadow-lg mb-6">
           Welcome to Gleeworld Pharmacy
         </h1>
@@ -87,7 +88,7 @@ export default function HeroSection() {
           <button className="bg-white text-[#ff0066] font-semibold py-3 px-8 rounded-full shadow-lg hover:bg-opacity-90 transition-all duration-300 mr-4">
             Shop Now
           </button>
-          <button className="bg-transparent border-2 border-white text-white font-semibold py-3 px-8 rounded-full hover:bg-white hover:bg-opacity-10 transition-all duration-300">
+          <button onClick={() => router.push("/about")} className="bg-transparent border-2 border-white text-white font-semibold py-3 px-8 rounded-full hover:bg-white hover:bg-opacity-10 transition-all duration-300">
             Learn More
           </button>
         </div>
