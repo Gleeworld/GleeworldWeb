@@ -55,19 +55,20 @@ function page({}) {
             <h2 className="text-3xl font-bold">Management</h2>
             <p className="text-gray-700">Brains behind the startup</p>
             
-            <div className="mt-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-5xl mx-auto">
-                {/* Team Member 1 */}
-                <div className="bg-white shadow-lg p-4 rounded-lg">
-                    <Image src="/FrameBidemi.png" width={200} height={200} className="rounded-full mx-auto" alt="CEO" />
-                    <h3 className="mt-4 text-lg font-semibold">Bidemi OJO</h3>
-                    <p className="text-gray-600">Founder & CEO</p>
-                </div>
 
                 {/* Team Member 2 */}
                 <div className="bg-white shadow-lg p-4 rounded-lg">
                     <Image src="/FrameBimbo.png" width={200} height={200} className="rounded-full mx-auto" alt="COO" />
                     <h3 className="mt-4 text-lg font-semibold">Bimpe OJO</h3>
-                    <p className="text-gray-600">Chief Operating Officer</p>
+                    <p className="text-gray-600">Chief Pharmacist</p>
+                </div>
+          
+            <div className="mt-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-5xl mx-auto">
+                {/* Team Member 1 */}
+                <div className="bg-white shadow-lg p-4 rounded-lg">
+                    <Image src="/FrameBidemi.png" width={200} height={200} className="rounded-full mx-auto" alt="CEO" />
+                    <h3 className="mt-4 text-lg font-semibold">Bidemi OJO</h3>
+                    <p className="text-gray-600">Co-Founder</p>
                 </div>
 
                 {/* Add more team members as needed */}
