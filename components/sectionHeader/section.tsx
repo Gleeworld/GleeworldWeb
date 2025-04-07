@@ -1,11 +1,7 @@
 import React from 'react';
 import Image from 'next/image';
 
-
-
-type Props = { title : string };
-
-function Section({ title }: Props) {
+function Section() {
   return (
     <div className='bg-gray-100 h-500 w-50'>
 
