@@ -96,18 +96,9 @@ export default function HeroSection() {
         </h1>
         <p className="text-xl md:text-2xl text-white max-w-2xl drop-shadow-md">Your Dose of Happiness</p>
         <div className="mt-8 flex flex-wrap justify-center gap-4">
-          <div>
-            <div>
-              <button className="bg-white text-[#ff0066] font-semibold py-3 px-8 rounded-full shadow-lg hover:bg-opacity-90 transition-all duration-300 flex items-center gap-2">
+              <button onClick={handleWhatsAppChat} className="bg-white text-[#ff0066] font-semibold py-3 px-8 rounded-full shadow-lg hover:bg-opacity-90 transition-all duration-300 flex items-center gap-2">
                 Shop Now
               </button>
-            </div>
-            
-              <div onClick={handleWhatsAppChat} className="cursor-pointer">
-                <span>Chat with Pharmacist</span>
-              </div>
-            </div>
-          </div>
 
           <button
             onClick={() => router.push("/about")}
@@ -115,8 +106,8 @@ export default function HeroSection() {
           >
             Learn More
           </button>
+          </div>
         </div>
       </div>
   )
 }
-
