@@ -1,12 +1,14 @@
 "use client"
 
-import { useEffect, useRef } from "react";
-import { useRouter } from "next/navigation";
+import { useEffect, useRef, useState } from "react"
+import { useRouter } from "next/navigation"
+import { MessageSquare, ShoppingBag } from "lucide-react"
+import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu"
 
 export default function HeroSection() {
-   const router = useRouter();
-  
+  const router = useRouter()
   const canvasRef = useRef<HTMLCanvasElement>(null)
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false)
 
   useEffect(() => {
     const canvas = canvasRef.current
@@ -73,6 +75,19 @@ export default function HeroSection() {
     }
   }, [])
 
+  const handleShopNow = () => {
+    router.push("/shop")
+  }
+
+  const handleWhatsAppChat = () => {
+    // Replace with the pharmacy's actual WhatsApp number
+    const phoneNumber = "1234567890"
+    // Customize the pre-filled message
+    const message = encodeURIComponent("Hello, I'd like to chat with a pharmacist.")
+    // Open WhatsApp with the pre-filled message
+    window.open(`https://wa.me/${phoneNumber}?text=${message}`, "_blank")
+  }
+
   return (
     <div className="relative w-full h-screen overflow-hidden">
       {/* Animated background */}
@@ -83,14 +98,31 @@ export default function HeroSection() {
         <h1 className="text-3xl md:text-6xl lg:text-7xl font-bold text-white drop-shadow-lg mb-6">
           Welcome to Gleeworld Pharmacy
         </h1>
-        <p className="text-xl md:text-2xl text-white max-w-2xl drop-shadow-md">
-          Your Dose of Happiness
-        </p>
-        <div className="mt-8">
-          <button className="bg-white text-[#ff0066] font-semibold py-3 px-8 rounded-full shadow-lg hover:bg-opacity-90 transition-all duration-300 mr-4">
-            Shop Now
-          </button>
-          <button onClick={() => router.push("/about")} className="bg-transparent border-2 border-white text-white font-semibold py-3 px-8 rounded-full hover:bg-white hover:bg-opacity-10 transition-all duration-300">
+        <p className="text-xl md:text-2xl text-white max-w-2xl drop-shadow-md">Your Dose of Happiness</p>
+        <div className="mt-8 flex flex-wrap justify-center gap-4">
+          <DropdownMenu open={isDropdownOpen} onOpenChange={setIsDropdownOpen}>
+            <DropdownMenuTrigger asChild>
+              <button className="bg-white text-[#ff0066] font-semibold py-3 px-8 rounded-full shadow-lg hover:bg-opacity-90 transition-all duration-300 flex items-center gap-2">
+                <ShoppingBag size={18} />
+                Shop Now
+              </button>
+            </DropdownMenuTrigger>
+            <DropdownMenuContent align="center" className="w-56">
+              <DropdownMenuItem onClick={handleShopNow} className="cursor-pointer">
+                <ShoppingBag className="mr-2 h-4 w-4" />
+                <span>Browse Products</span>
+              </DropdownMenuItem>
+              <DropdownMenuItem onClick={handleWhatsAppChat} className="cursor-pointer">
+                <MessageSquare className="mr-2 h-4 w-4" />
+                <span>Chat with Pharmacist</span>
+              </DropdownMenuItem>
+            </DropdownMenuContent>
+          </DropdownMenu>
+
+          <button
+            onClick={() => router.push("/about")}
+            className="bg-transparent border-2 border-white text-white font-semibold py-3 px-8 rounded-full hover:bg-white hover:bg-opacity-10 transition-all duration-300"
+          >
             Learn More
           </button>
         </div>
