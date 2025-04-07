@@ -79,7 +79,7 @@ export default function HeroSection() {
 
   const handleWhatsAppChat = () => {
     // Replace with the pharmacy's actual WhatsApp number
-    const phoneNumber = "1234567890"
+    const phoneNumber = "08035787654"
     // Customize the pre-filled message
     const message = encodeURIComponent("Hello, I'd like to chat with a pharmacist.")
     // Open WhatsApp with the pre-filled message
@@ -101,17 +101,11 @@ export default function HeroSection() {
           <div>
             <div>
               <button className="bg-white text-[#ff0066] font-semibold py-3 px-8 rounded-full shadow-lg hover:bg-opacity-90 transition-all duration-300 flex items-center gap-2">
-                <ShoppingBag size={18} />
                 Shop Now
               </button>
             </div>
-            <div align="center" className="w-56">
-              <div onClick={handleShopNow} className="cursor-pointer">
-                <ShoppingBag className="mr-2 h-4 w-4" />
-                <span>Browse Products</span>
-              </div>
+            
               <div onClick={handleWhatsAppChat} className="cursor-pointer">
-                <MessageSquare className="mr-2 h-4 w-4" />
                 <span>Chat with Pharmacist</span>
               </div>
             </div>
