@@ -80,11 +80,11 @@ export default function HeroSection() {
 
       {/* Content */}
       <div className="relative z-10 flex flex-col items-center justify-end w-full h-full text-center px-4 py-10">
-        <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white drop-shadow-lg mb-6">
+        <h1 className="text-3xl md:text-6xl lg:text-7xl font-bold text-white drop-shadow-lg mb-6">
           Welcome to Gleeworld Pharmacy
         </h1>
         <p className="text-xl md:text-2xl text-white max-w-2xl drop-shadow-md">
-          Your trusted partner for health and wellness
+          Your Dose of Happiness
         </p>
         <div className="mt-8">
           <button className="bg-white text-[#ff0066] font-semibold py-3 px-8 rounded-full shadow-lg hover:bg-opacity-90 transition-all duration-300 mr-4">
