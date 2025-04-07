@@ -79,7 +79,7 @@ export default function HeroSection() {
       <canvas ref={canvasRef} className="absolute inset-0 w-full h-full" style={{ zIndex: 0 }} />
 
       {/* Content */}
-      <div className="relative z-10 flex flex-col items-center justify-around w-full h-full text-center px-4">
+      <div className="relative z-10 flex flex-col items-center justify-end w-full h-full text-center px-4 py-10">
         <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white drop-shadow-lg mb-6">
           Welcome to Gleeworld Pharmacy
         </h1>
