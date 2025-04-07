@@ -10,7 +10,7 @@ import Image from 'next/image';
 function page({}) {
   return (
     <div>
-        <Section title='about us' />
+        <Section />
 
         {/* Header Section */}
         <div className="text-center pt-5 pb-6 text-black">
