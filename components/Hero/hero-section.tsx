@@ -2,8 +2,8 @@
 
 import { useEffect, useRef, useState } from "react"
 import { useRouter } from "next/navigation"
-import { MessageSquare, ShoppingBag } from "lucide-react"
-import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu"
+//import { MessageSquare, ShoppingBag } from "lucide-react"
+//import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu"
 
 export default function HeroSection() {
   const router = useRouter()
@@ -100,24 +100,24 @@ export default function HeroSection() {
         </h1>
         <p className="text-xl md:text-2xl text-white max-w-2xl drop-shadow-md">Your Dose of Happiness</p>
         <div className="mt-8 flex flex-wrap justify-center gap-4">
-          <DropdownMenu open={isDropdownOpen} onOpenChange={setIsDropdownOpen}>
-            <DropdownMenuTrigger asChild>
+          <div>
+            <div>
               <button className="bg-white text-[#ff0066] font-semibold py-3 px-8 rounded-full shadow-lg hover:bg-opacity-90 transition-all duration-300 flex items-center gap-2">
                 <ShoppingBag size={18} />
                 Shop Now
               </button>
-            </DropdownMenuTrigger>
-            <DropdownMenuContent align="center" className="w-56">
-              <DropdownMenuItem onClick={handleShopNow} className="cursor-pointer">
+            </div>
+            <div align="center" className="w-56">
+              <div onClick={handleShopNow} className="cursor-pointer">
                 <ShoppingBag className="mr-2 h-4 w-4" />
                 <span>Browse Products</span>
-              </DropdownMenuItem>
-              <DropdownMenuItem onClick={handleWhatsAppChat} className="cursor-pointer">
+              </div>
+              <div onClick={handleWhatsAppChat} className="cursor-pointer">
                 <MessageSquare className="mr-2 h-4 w-4" />
                 <span>Chat with Pharmacist</span>
-              </DropdownMenuItem>
-            </DropdownMenuContent>
-          </DropdownMenu>
+              </div>
+            </div>
+          </div>
 
           <button
             onClick={() => router.push("/about")}
