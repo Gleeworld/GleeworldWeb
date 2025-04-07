@@ -1,4 +1,5 @@
-import Hero from '../components/Hero/hero';
+//import Hero from '../components/Hero/hero';
+import FlowHero from "../components/Hero/hero-section";
 import Services from '../components/Services/services';
 import Stats from '../components/Stats/stats';
 import NewsSection from '@/components/News/NewsSection';
@@ -11,7 +12,7 @@ import MedfinderPromo from '@/components/Medfinder/MedfinderPromo';
 export default function Home() {
   return (
     <main>
-      <Hero />
+      <FlowHero />
       <Services />
       <Stats />
       <NewsSection subheading={"latest Developments"} title={"News"} />
