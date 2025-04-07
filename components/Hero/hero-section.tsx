@@ -1,4 +1,4 @@
-"use client"
+m"use client"
 
 import { useEffect, useRef } from "react"
 
@@ -78,7 +78,7 @@ export default function HeroSection() {
       {/* Content */}
       <div className="relative z-10 flex flex-col items-center justify-end w-full h-full text-center px-4">
         <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white drop-shadow-lg mb-6">
-          Gleeworld Pharmacy
+          Welcome to Gleeworld Pharmacy
         </h1>
         <p className="text-xl md:text-2xl text-white max-w-2xl drop-shadow-md">
           Your trusted partner for health and wellness
