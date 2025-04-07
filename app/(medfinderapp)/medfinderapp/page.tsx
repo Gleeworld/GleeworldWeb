@@ -7,7 +7,7 @@ import MedfinderPromo from '@/components/Medfinder/MedfinderPromo';
 function page({}) {
   return (
     <div className='bg-orange-50'>
-        <Section title='medfinder' />
+        <Section />
         <div className='pt-5 pb-6'>
         <MedfinderPromo />
         </div>
