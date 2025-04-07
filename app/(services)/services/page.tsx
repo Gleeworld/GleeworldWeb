@@ -9,7 +9,7 @@ import Accordion from '@/components/FAQ/Accordion';
 const page = () => {
   return (
     <div>
-     <Section title='Services' />
+     <Section />
       <ServiceList />
       <Accordion />
       <MedfinderPromo />
