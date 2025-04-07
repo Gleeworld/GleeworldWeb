@@ -25,7 +25,7 @@ const Navbar = () => {
       <div className="container mx-auto flex items-center justify-between p-4">
         {/* Logo */}
         <div className="flex items-center">
-          <Image  alt="Gleeworld Logo" width={100} height={140} className="cursor-pointer" />
+          <Image onClick={() => router.push("/")}   alt="Gleeworld Logo" width={100} height={140} className="cursor-pointer" />
         </div>
 
         {/* Desktop Navigation */}
