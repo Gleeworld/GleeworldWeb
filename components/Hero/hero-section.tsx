@@ -2,8 +2,6 @@
 
 import { useEffect, useRef, useState } from "react"
 import { useRouter } from "next/navigation"
-//import { MessageSquare, ShoppingBag } from "lucide-react"
-//import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu"
 
 export default function HeroSection() {
   const router = useRouter()
