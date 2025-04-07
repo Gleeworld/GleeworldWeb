@@ -6,7 +6,7 @@ import { useRouter } from "next/navigation"
 export default function HeroSection() {
   const router = useRouter()
   const canvasRef = useRef<HTMLCanvasElement>(null)
-  const [isDropdownOpen, setIsDropdownOpen] = useState(false)
+  
 
   useEffect(() => {
     const canvas = canvasRef.current
@@ -73,9 +73,7 @@ export default function HeroSection() {
     }
   }, [])
 
-  const handleShopNow = () => {
-    router.push("/shop")
-  }
+
 
   const handleWhatsAppChat = () => {
     // Replace with the pharmacy's actual WhatsApp number
