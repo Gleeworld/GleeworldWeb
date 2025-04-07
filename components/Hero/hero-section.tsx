@@ -4,6 +4,8 @@ import { useEffect, useRef } from "react";
 import { useRouter } from "next/navigation";
 
 export default function HeroSection() {
+   const router = useRouter();
+  
   const canvasRef = useRef<HTMLCanvasElement>(null)
 
   useEffect(() => {
