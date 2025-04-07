@@ -56,6 +56,7 @@ function page({}) {
             <p className="text-gray-700">Brains behind the startup</p>
             
 
+            <div className="mt-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-5xl mx-auto">
                 {/* Team Member 2 */}
                 <div className="bg-white shadow-lg p-4 rounded-lg">
                     <Image src="/FrameBimbo.png" width={200} height={200} className="rounded-full mx-auto" alt="COO" />
@@ -63,7 +64,6 @@ function page({}) {
                     <p className="text-gray-600">Chief Pharmacist</p>
                 </div>
           
-            <div className="mt-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-5xl mx-auto">
                 {/* Team Member 1 */}
                 <div className="bg-white shadow-lg p-4 rounded-lg">
                     <Image src="/FrameBidemi.png" width={200} height={200} className="rounded-full mx-auto" alt="CEO" />
