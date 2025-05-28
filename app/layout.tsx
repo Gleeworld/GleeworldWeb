@@ -1,4 +1,3 @@
-// app/layout.tsx
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
@@ -17,9 +16,12 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Gleeworld Pharmacy – Affordable Pharmacy in Nigeria | Your Dose of Happiness",
+  title: "Gleeworld Pharmacy – Telepharmacy and Medication Delivery | Your Dose of Happiness",
   description:
     "Gleeworld Pharmacy offers affordable medicines, pain relief, and health support across Nigeria. Use our Medfinder app to find a nearby pharmacy today.",
+  icons: {
+    icon: "/favicon.png",
+  },
 };
 
 export default function RootLayout({
@@ -30,7 +32,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head />
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+      <body
+        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+      >
         <Navbar />
         {children}
         <Newsletter />
