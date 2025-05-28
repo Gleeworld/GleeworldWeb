@@ -1,3 +1,4 @@
+// app/layout.tsx
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
@@ -28,28 +29,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <head>
-        <title>Gleeworld Pharmacy – Affordable Pharmacy in Nigeria | Your Dose of Happiness</title>
-        <meta
-          name="description"
-          content="Gleeworld Pharmacy offers affordable medicines, pain relief, and health support across Nigeria. Use our Medfinder app to find a nearby pharmacy today."
-        />
-      </head>
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        <h1>Welcome to Gleeworld Pharmacy – Your Trusted Pharmacy in Nigeria</h1>
-        <h2>Find Nearby Pharmacies in Lagos, Lekki & Beyond</h2>
-        <h3>Affordable Painkillers – Aceclofenac & Paracetamol Tablets</h3>
+      <head />
+      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         <Navbar />
         {children}
         <Newsletter />
         <Footer />
-      </body>
-    </html>
-  );
-}
-
       </body>
     </html>
   );
