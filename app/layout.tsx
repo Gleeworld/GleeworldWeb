@@ -21,7 +21,7 @@ export const metadata: Metadata = {
   title: "Gleeworld Pharmacy – Telepharmacy and Medication Delivery | Your Dose of Happiness",
   description: "Gleeworld Pharmacy offers telepharmacy and medication delivery across Nigeria. Use our Medfinder app to find nearby pharmacies and get affordable health support.",
   icons: {
-    icon: "/favicon.ico",
+    icon: "/gleeworld-favicon.ico", // Use the renamed favicon here
   },
 };
 
@@ -33,9 +33,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <link rel="icon" href="/favicon.ico" sizes="any" />
+        <link rel="icon" href="/gleeworld-favicon.ico" sizes="any" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta charSet="utf-8" />
+        <meta name="description" content="Gleeworld Pharmacy offers telepharmacy and medication delivery across Nigeria. Use our Medfinder app to find nearby pharmacies and get affordable health support." />
+        <meta name="keywords" content="Gleeworld Pharmacy, Medfinder, Nigeria pharmacy, telepharmacy, medication delivery, Aceclofenac, Paracetamol, pain relief, find medicine" />
+        <meta name="author" content="Gleeworld Pharmacy" />
       </head>
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         <Navbar />
