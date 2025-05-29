@@ -21,7 +21,7 @@ export const metadata: Metadata = {
   title: "Gleeworld Pharmacy – Telepharmacy and Medication Delivery | Your Dose of Happiness",
   description: "Gleeworld Pharmacy offers telepharmacy and medication delivery across Nigeria. Use our Medfinder app to find nearby pharmacies and get affordable health support.",
   icons: {
-    icon: "/favicon.png",
+    icon: "/favicon.ico",
   },
 };
 
@@ -33,7 +33,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <link rel="icon" href="/favicon.png" sizes="any" />
+        <link rel="icon" href="/favicon.ico" sizes="any" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta charSet="utf-8" />
       </head>
