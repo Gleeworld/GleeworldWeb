@@ -14,14 +14,13 @@ const Navbar = () => {
   }
 
   return (
-    <header className="bg-white shadow-md fixed top-0 left-0 right-0 z-50">
-      <div className="max-w-7xl mx-auto flex items-center justify-between h-20 px-6">
+    <header className="w-full px-6 py-4">
+      <div className="max-w-7xl mx-auto flex items-center justify-between">
         
-        {/* Left side: Logo + Nav Links */}
+        {/* Logo + Links */}
         <div className="flex items-center space-x-10">
-          {/* Logo */}
           <div 
-            className="relative h-12 w-36 cursor-pointer"
+            className="relative h-10 w-32 cursor-pointer"
             onClick={() => router.push("/")}
           >
             <Image
@@ -33,8 +32,7 @@ const Navbar = () => {
             />
           </div>
 
-          {/* Desktop Nav Links */}
-          <nav className="hidden md:flex space-x-8 text-gray-700 font-medium text-lg">
+          <nav className="hidden md:flex space-x-8 text-gray-800 font-medium text-base">
             <span onClick={() => router.push("/")} className="hover:text-orange-500 cursor-pointer">Home</span>
             <span onClick={() => router.push("/services")} className="hover:text-orange-500 cursor-pointer">Services</span>
             <span onClick={() => router.push("/medfinderapp")} className="hover:text-orange-500 cursor-pointer">Medfinder App</span>
@@ -43,45 +41,46 @@ const Navbar = () => {
           </nav>
         </div>
 
-        {/* Right side: Chat Button or Mobile Menu */}
+        {/* Chat & Hamburger */}
         <div className="flex items-center space-x-4">
-          {/* Chat button on desktop */}
           <div
-            className="hidden md:flex border border-green-300 p-2 rounded-lg bg-green-500 items-center space-x-2 cursor-pointer hover:bg-green-600 transition-colors"
+            className="hidden md:flex border border-green-300 px-3 py-1.5 rounded-full bg-green-500 items-center space-x-2 cursor-pointer hover:bg-green-600 transition"
             onClick={openWhatsAppChat}
           >
-            <p className="text-white font-medium text-sm">Chat with Pharmacist</p>
-            <Image src="/logos_whatsapp-icon.png" alt="WhatsApp Icon" width={24} height={24} />
+            <p className="text-white text-sm">Chat with Pharmacist</p>
+            <Image src="/logos_whatsapp-icon.png" alt="WhatsApp Icon" width={20} height={20} />
           </div>
 
-          {/* Mobile Menu Button */}
           <button className="md:hidden text-gray-700" onClick={() => setMenuOpen(!menuOpen)}>
-            {menuOpen ? <FiX size={28} /> : <FiMenu size={28} />}
+            {menuOpen ? <FiX size={26} /> : <FiMenu size={26} />}
           </button>
         </div>
       </div>
 
-      {/* Mobile Navigation Menu */}
-      <div
-        className={`md:hidden bg-white absolute top-20 left-0 w-full shadow-md transition-all duration-300 ${
-          menuOpen ? "block" : "hidden"
-        }`}
-      >
-        <ul className="flex flex-col items-center space-y-5 py-6 text-gray-700 font-medium text-lg">
-          <li onClick={() => { router.push("/"); setMenuOpen(false) }} className="hover:text-orange-500 cursor-pointer">Home</li>
-          <li onClick={() => { router.push("/services"); setMenuOpen(false) }} className="hover:text-orange-500 cursor-pointer">Services</li>
-          <li onClick={() => { router.push("/medfinderapp"); setMenuOpen(false) }} className="hover:text-orange-500 cursor-pointer">Medfinder App</li>
-          <li onClick={() => { router.push("/news"); setMenuOpen(false) }} className="hover:text-orange-500 cursor-pointer">News</li>
-          <li onClick={() => { router.push("/about"); setMenuOpen(false) }} className="hover:text-orange-500 cursor-pointer">About Us</li>
-          <li
-            className="flex items-center space-x-2 p-2 rounded-lg bg-green-500 cursor-pointer hover:bg-green-600 transition-colors"
+      {/* Mobile Menu */}
+      {menuOpen && (
+        <div className="md:hidden mt-4 px-4 space-y-4">
+          {["/", "/services", "/medfinderapp", "/news", "/about"].map((path, i) => (
+            <p
+              key={i}
+              onClick={() => {
+                router.push(path)
+                setMenuOpen(false)
+              }}
+              className="text-gray-800 font-medium text-base cursor-pointer hover:text-orange-500"
+            >
+              {["Home", "Services", "Medfinder App", "News", "About Us"][i]}
+            </p>
+          ))}
+          <div
+            className="flex items-center space-x-2 px-3 py-2 rounded-full bg-green-500 w-fit cursor-pointer hover:bg-green-600 transition"
             onClick={openWhatsAppChat}
           >
-            <p className="text-white font-medium text-sm">Chat with Pharmacist</p>
-            <Image src="/logos_whatsapp-icon.png" alt="WhatsApp Icon" width={24} height={24} />
-          </li>
-        </ul>
-      </div>
+            <p className="text-white text-sm">Chat with Pharmacist</p>
+            <Image src="/logos_whatsapp-icon.png" alt="WhatsApp Icon" width={20} height={20} />
+          </div>
+        </div>
+      )}
     </header>
   )
 }
