@@ -7,37 +7,33 @@ export default function HeroSection() {
 
   const handleWhatsAppChat = () => {
     const phoneNumber = "08035787654"
-    const message = encodeURIComponent("Hello, I'd like to chat with a pharmacist.")
+    const message = encodeURIComponent("Hello, I’d like to chat with a pharmacist.")
     window.open(`https://wa.me/${phoneNumber}?text=${message}`, "_blank")
   }
 
   return (
     <div className="relative w-full h-screen bg-gradient-to-br from-[#FF9933] via-[#FF0066] to-[#C0C0C0] overflow-hidden">
-      
-      {/* Background Capsules */}
-      <svg
-        className="absolute top-0 left-0 w-full h-full z-0"
-        viewBox="0 0 1440 600"
-        preserveAspectRatio="none"
-      >
-        <ellipse cx="200" cy="120" rx="160" ry="60" fill="#FF9933" opacity="0.35" />
-        <ellipse cx="600" cy="200" rx="250" ry="90" fill="#FF0066" opacity="0.35" />
-        <ellipse cx="1000" cy="100" rx="200" ry="80" fill="#C0C0C0" opacity="0.35" />
-        <ellipse cx="300" cy="500" rx="230" ry="85" fill="#FF0066" opacity="0.25" />
-        <ellipse cx="800" cy="420" rx="200" ry="70" fill="#FF9933" opacity="0.3" />
-        <ellipse cx="1200" cy="300" rx="190" ry="75" fill="#C0C0C0" opacity="0.3" />
+
+      {/* Abstract Shapes */}
+      <svg className="absolute top-0 left-0 w-full h-full z-0" viewBox="0 0 1440 600" preserveAspectRatio="none">
+        <ellipse cx="200" cy="100" rx="160" ry="60" fill="#FF0066" opacity="0.3" />
+        <ellipse cx="600" cy="250" rx="300" ry="90" fill="#FF9933" opacity="0.3" />
+        <ellipse cx="1000" cy="150" rx="220" ry="80" fill="#C0C0C0" opacity="0.2" />
+        <ellipse cx="300" cy="520" rx="260" ry="80" fill="#FF0066" opacity="0.2" />
+        <ellipse cx="900" cy="450" rx="220" ry="70" fill="#FF9933" opacity="0.25" />
+        <ellipse cx="1300" cy="300" rx="200" ry="75" fill="#C0C0C0" opacity="0.25" />
       </svg>
 
-      {/* Content Section */}
+      {/* Content */}
       <div className="relative z-10 flex flex-col items-center justify-center h-full text-center px-6">
-        <h1 className="text-white text-4xl md:text-6xl font-bold drop-shadow mb-4">
+        <h1 className="text-white text-5xl md:text-6xl font-bold drop-shadow mb-4">
           Welcome to Gleeworld Pharmacy
         </h1>
-        <p className="text-white text-xl md:text-2xl mb-2 drop-shadow">
+        <p className="text-white text-2xl md:text-3xl font-light mb-3 drop-shadow">
           Your Dose of Happiness
         </p>
-        <p className="text-white text-lg md:text-xl max-w-2xl mx-auto mb-8 drop-shadow">
-          Empowering wellness, one smile at a time.
+        <p className="text-white text-lg md:text-xl mb-8 drop-shadow">
+          Pharmacy made joyful.
         </p>
 
         <div className="flex flex-wrap justify-center gap-4">
