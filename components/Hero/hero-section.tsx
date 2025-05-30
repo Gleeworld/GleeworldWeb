@@ -71,16 +71,18 @@ export default function HeroSection() {
   }
 
   return (
-    <div className="relative w-full h-screen overflow-hidden">
+    <div className="relative w-full min-h-screen overflow-hidden"> {/* Changed h-screen to min-h-screen */}
       <canvas ref={canvasRef} className="absolute inset-0 w-full h-full" style={{ zIndex: 0 }} />
 
-      {/* ↓ Reduced top padding from py-10 to py-2 ↓ */}
-      <div className="relative z-10 flex flex-col items-center justify-end w-full h-full text-center px-4 py-2">
-        <h1 className="text-3xl md:text-6xl lg:text-7xl font-bold text-white drop-shadow-lg mb-6">
+      {/* Added negative margin-top, reduced padding */}
+      <div className="relative z-10 flex flex-col items-center justify-start w-full h-full text-center px-4 py-2 -mt-10">
+        <h1 className="text-3xl md:text-6xl lg:text-7xl font-bold text-white drop-shadow-lg mb-4 m-0">
           Welcome to Gleeworld Pharmacy
         </h1>
-        <p className="text-xl md:text-2xl text-white max-w-2xl drop-shadow-md">Your Dose of Happiness</p>
-        <div className="mt-8 flex flex-wrap justify-center gap-4">
+        <p className="text-xl md:text-2xl text-white max-w-2xl drop-shadow-md mb-4 m-0">
+          Your Dose of Happiness
+        </p>
+        <div className="mt-6 flex flex-wrap justify-center gap-4">
           <button
             onClick={handleWhatsAppChat}
             className="bg-white text-[#ff0066] font-semibold py-3 px-8 rounded-full shadow-lg hover:bg-opacity-90 transition-all duration-300 flex items-center gap-2"
