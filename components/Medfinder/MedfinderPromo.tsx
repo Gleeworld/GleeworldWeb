@@ -10,7 +10,7 @@ const MedfinderPromo = () => {
           Save time and money with Medfinder
         </h2>
         <p className="text-lg mb-6">
-          sDiscover a simpler way to access medicines you need, medfinder connects you to nearby pharmacies, helping you to save time, reduce cost and et trusted care, fast and hassle free, Experience affordability, convevience and availability like never before, get Started today 
+            Discover a simpler way to access the medicines you need. Medfinder connects you to nearby pharmacies, helping you save time, reduce costs, and get trusted care—fast and hassle-free. Experience affordability, convenience, and availability like never before. Get started today!
         </p>
         <button className="bg-white border border-gray-500 text-black px-6 py-3 rounded-full font-semibold hover:bg-gray-200 transition">
           Download Medfinder
