@@ -14,7 +14,7 @@ const Navbar = () => {
   }
 
   return (
-    <header className="w-full px-6 py-6">
+    <header className="w-full px-6 py-2"> {/* Reduced vertical padding from py-6 to py-2 */}
       <div className="max-w-7xl mx-auto flex items-center justify-between">
         
         {/* Logo and Links */}
