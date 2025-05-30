@@ -18,9 +18,9 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto flex items-center justify-between">
         
         {/* Logo + Links */}
-        <div className="flex items-center space-x-10">
+        <div className="flex items-center space-x-12">
           <div 
-            className="relative h-10 w-32 cursor-pointer"
+            className="relative h-14 w-40 cursor-pointer"
             onClick={() => router.push("/")}
           >
             <Image
@@ -32,7 +32,7 @@ const Navbar = () => {
             />
           </div>
 
-          <nav className="hidden md:flex space-x-8 text-gray-800 font-medium text-base">
+          <nav className="hidden md:flex space-x-10 text-gray-800 font-medium text-lg">
             <span onClick={() => router.push("/")} className="hover:text-orange-500 cursor-pointer">Home</span>
             <span onClick={() => router.push("/services")} className="hover:text-orange-500 cursor-pointer">Services</span>
             <span onClick={() => router.push("/medfinderapp")} className="hover:text-orange-500 cursor-pointer">Medfinder App</span>
@@ -44,7 +44,7 @@ const Navbar = () => {
         {/* Chat & Hamburger */}
         <div className="flex items-center space-x-4">
           <div
-            className="hidden md:flex border border-green-300 px-3 py-1.5 rounded-full bg-green-500 items-center space-x-2 cursor-pointer hover:bg-green-600 transition"
+            className="hidden md:flex border border-green-300 px-4 py-2 rounded-full bg-green-500 items-center space-x-2 cursor-pointer hover:bg-green-600 transition"
             onClick={openWhatsAppChat}
           >
             <p className="text-white text-sm">Chat with Pharmacist</p>
@@ -67,13 +67,13 @@ const Navbar = () => {
                 router.push(path)
                 setMenuOpen(false)
               }}
-              className="text-gray-800 font-medium text-base cursor-pointer hover:text-orange-500"
+              className="text-gray-800 font-medium text-lg cursor-pointer hover:text-orange-500"
             >
               {["Home", "Services", "Medfinder App", "News", "About Us"][i]}
             </p>
           ))}
           <div
-            className="flex items-center space-x-2 px-3 py-2 rounded-full bg-green-500 w-fit cursor-pointer hover:bg-green-600 transition"
+            className="flex items-center space-x-2 px-4 py-2 rounded-full bg-green-500 w-fit cursor-pointer hover:bg-green-600 transition"
             onClick={openWhatsAppChat}
           >
             <p className="text-white text-sm">Chat with Pharmacist</p>
