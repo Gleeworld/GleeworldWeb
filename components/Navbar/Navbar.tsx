@@ -14,13 +14,13 @@ const Navbar = () => {
   }
 
   return (
-    <header className="w-full px-6 py-5">
+    <header className="w-full px-6 py-6">
       <div className="max-w-7xl mx-auto flex items-center justify-between">
         
-        {/* Logo + Links */}
-        <div className="flex items-center space-x-16">
+        {/* Logo and Links */}
+        <div className="flex items-center space-x-20">
           <div 
-            className="relative h-20 w-56 cursor-pointer" // Bigger logo
+            className="relative h-24 w-64 cursor-pointer" // Larger logo
             onClick={() => router.push("/")}
           >
             <Image
@@ -32,59 +32,60 @@ const Navbar = () => {
             />
           </div>
 
-          <nav className="hidden md:flex space-x-12 text-gray-600 text-lg">
+          {/* Desktop Nav */}
+          <nav className="hidden md:flex space-x-14 text-gray-700 text-xl font-medium">
             <span
               onClick={() => router.push("/")}
-              className="cursor-pointer hover:underline underline-offset-4"
+              className="cursor-pointer hover:border-b-2 border-orange-500 transition duration-200"
             >
               Home
             </span>
             <span
               onClick={() => router.push("/services")}
-              className="cursor-pointer hover:underline underline-offset-4"
+              className="cursor-pointer hover:border-b-2 border-orange-500 transition duration-200"
             >
               Services
             </span>
             <span
               onClick={() => router.push("/medfinderapp")}
-              className="cursor-pointer hover:underline underline-offset-4"
+              className="cursor-pointer hover:border-b-2 border-orange-500 transition duration-200"
             >
               Medfinder App
             </span>
             <span
               onClick={() => router.push("/news")}
-              className="cursor-pointer hover:underline underline-offset-4"
+              className="cursor-pointer hover:border-b-2 border-orange-500 transition duration-200"
             >
               News
             </span>
             <span
               onClick={() => router.push("/about")}
-              className="cursor-pointer hover:underline underline-offset-4"
+              className="cursor-pointer hover:border-b-2 border-orange-500 transition duration-200"
             >
               About Us
             </span>
           </nav>
         </div>
 
-        {/* Chat & Hamburger */}
+        {/* WhatsApp Chat + Mobile Menu */}
         <div className="flex items-center space-x-4">
           <div
-            className="hidden md:flex border px-4 py-2 rounded-full bg-green-500 items-center space-x-2 cursor-pointer"
+            className="hidden md:flex border px-5 py-2 rounded-full bg-green-500 items-center space-x-2 cursor-pointer"
             onClick={openWhatsAppChat}
           >
-            <p className="text-white text-sm">Chat with Pharmacist</p>
-            <Image src="/logos_whatsapp-icon.png" alt="WhatsApp Icon" width={20} height={20} />
+            <p className="text-white text-base">Chat with Pharmacist</p>
+            <Image src="/logos_whatsapp-icon.png" alt="WhatsApp Icon" width={22} height={22} />
           </div>
 
           <button className="md:hidden text-gray-600" onClick={() => setMenuOpen(!menuOpen)}>
-            {menuOpen ? <FiX size={26} /> : <FiMenu size={26} />}
+            {menuOpen ? <FiX size={28} /> : <FiMenu size={28} />}
           </button>
         </div>
       </div>
 
-      {/* Mobile Menu */}
+      {/* Mobile Nav Menu */}
       {menuOpen && (
-        <div className="md:hidden mt-4 px-4 space-y-4">
+        <div className="md:hidden mt-4 px-4 space-y-4 text-lg">
           {["/", "/services", "/medfinderapp", "/news", "/about"].map((path, i) => (
             <p
               key={i}
@@ -92,7 +93,7 @@ const Navbar = () => {
                 router.push(path)
                 setMenuOpen(false)
               }}
-              className="text-gray-600 text-lg cursor-pointer hover:underline underline-offset-4"
+              className="text-gray-700 font-medium cursor-pointer hover:border-b-2 border-orange-500 transition duration-200"
             >
               {["Home", "Services", "Medfinder App", "News", "About Us"][i]}
             </p>
@@ -101,8 +102,8 @@ const Navbar = () => {
             className="flex items-center space-x-2 px-4 py-2 rounded-full bg-green-500 w-fit cursor-pointer"
             onClick={openWhatsAppChat}
           >
-            <p className="text-white text-sm">Chat with Pharmacist</p>
-            <Image src="/logos_whatsapp-icon.png" alt="WhatsApp Icon" width={20} height={20} />
+            <p className="text-white text-base">Chat with Pharmacist</p>
+            <Image src="/logos_whatsapp-icon.png" alt="WhatsApp Icon" width={22} height={22} />
           </div>
         </div>
       )}
