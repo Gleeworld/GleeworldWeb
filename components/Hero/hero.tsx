@@ -1,10 +1,10 @@
-//import Image from 'next/image';
-//import heroImage from "./Group 71.png"
+// components/Hero/hero.tsx
+
 import Image from "next/image";
 
 export default function Hero() {
   return (
-    <section className="relative bg-white py-16 lg:py-24">
+    <section className="relative bg-white pt-4 pb-16 lg:pt-6 lg:pb-20">
       <div className="container mx-auto px-4">
         <div className="flex flex-col lg:flex-row items-center justify-between">
           <div className="lg:w-1/2 mb-10 lg:mb-0">
