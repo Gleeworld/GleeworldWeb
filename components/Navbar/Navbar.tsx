@@ -20,7 +20,7 @@ const Navbar = () => {
         {/* Logo + Links */}
         <div className="flex items-center space-x-16">
           <div 
-            className="relative h-16 w-44 cursor-pointer"
+            className="relative h-20 w-56 cursor-pointer" // Bigger logo
             onClick={() => router.push("/")}
           >
             <Image
@@ -32,12 +32,37 @@ const Navbar = () => {
             />
           </div>
 
-          <nav className="hidden md:flex space-x-12 text-black text-lg">
-            <span onClick={() => router.push("/")} className="cursor-pointer">Home</span>
-            <span onClick={() => router.push("/services")} className="cursor-pointer">Services</span>
-            <span onClick={() => router.push("/medfinderapp")} className="cursor-pointer">Medfinder App</span>
-            <span onClick={() => router.push("/news")} className="cursor-pointer">News</span>
-            <span onClick={() => router.push("/about")} className="cursor-pointer">About Us</span>
+          <nav className="hidden md:flex space-x-12 text-gray-600 text-lg">
+            <span
+              onClick={() => router.push("/")}
+              className="cursor-pointer hover:underline underline-offset-4"
+            >
+              Home
+            </span>
+            <span
+              onClick={() => router.push("/services")}
+              className="cursor-pointer hover:underline underline-offset-4"
+            >
+              Services
+            </span>
+            <span
+              onClick={() => router.push("/medfinderapp")}
+              className="cursor-pointer hover:underline underline-offset-4"
+            >
+              Medfinder App
+            </span>
+            <span
+              onClick={() => router.push("/news")}
+              className="cursor-pointer hover:underline underline-offset-4"
+            >
+              News
+            </span>
+            <span
+              onClick={() => router.push("/about")}
+              className="cursor-pointer hover:underline underline-offset-4"
+            >
+              About Us
+            </span>
           </nav>
         </div>
 
@@ -51,7 +76,7 @@ const Navbar = () => {
             <Image src="/logos_whatsapp-icon.png" alt="WhatsApp Icon" width={20} height={20} />
           </div>
 
-          <button className="md:hidden text-black" onClick={() => setMenuOpen(!menuOpen)}>
+          <button className="md:hidden text-gray-600" onClick={() => setMenuOpen(!menuOpen)}>
             {menuOpen ? <FiX size={26} /> : <FiMenu size={26} />}
           </button>
         </div>
@@ -67,7 +92,7 @@ const Navbar = () => {
                 router.push(path)
                 setMenuOpen(false)
               }}
-              className="text-black text-lg cursor-pointer"
+              className="text-gray-600 text-lg cursor-pointer hover:underline underline-offset-4"
             >
               {["Home", "Services", "Medfinder App", "News", "About Us"][i]}
             </p>
