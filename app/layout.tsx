@@ -19,7 +19,7 @@ const geistMono = Geist_Mono({
 // Metadata
 export const metadata: Metadata = {
   title: "Gleeworld Pharmacy – Telepharmacy and Medication Delivery | Your Dose of Happiness",
-  description: "Gleeworld Pharmacy offers telepharmacy and medication delivery across Nigeria. Use our Medfinder app to find nearby pharmacies and get affordable health support.",
+  description: "Gleeworld Pharmacy offers telepharmacy and medication delivery across Nigeria. Use Medfinder to discover nearby pharmacies and get your preferred medicines. Save time with easy pickup or delivery across Nigeria. Experience automated reminders, refills, follow-up care messages, and AI-enabled pharmacist consultations — all in one app. Affordable, fast, and hassle-free access to medicines and primary care.",
   icons: {
     icon: "/gleeworld-favicon.ico",
   },
