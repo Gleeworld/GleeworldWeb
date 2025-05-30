@@ -3,13 +3,9 @@
 import { useEffect, useRef } from "react"
 import { useRouter } from "next/navigation"
 
-const HeroSection = () => {
-  const canvasRef = useRef<HTMLCanvasElement>(null)
+export default function HeroSection() {
   const router = useRouter()
-
-  const handleWhatsAppChat = () => {
-    window.open("https://wa.me/yourwhatsapplink", "_blank")
-  }
+  const canvasRef = useRef<HTMLCanvasElement>(null)
 
   useEffect(() => {
     const canvas = canvasRef.current
@@ -18,36 +14,79 @@ const HeroSection = () => {
     const ctx = canvas.getContext("2d")
     if (!ctx) return
 
-    canvas.width = window.innerWidth
-    canvas.height = window.innerHeight
+    const resizeCanvas = () => {
+      canvas.width = window.innerWidth
+      canvas.height = window.innerHeight
+    }
 
-    const gradient = ctx.createLinearGradient(0, 0, canvas.width, canvas.height)
-    gradient.addColorStop(0, "#ff0066") // Magenta
-    gradient.addColorStop(1, "#ff9900") // Orange
+    resizeCanvas()
+    window.addEventListener("resize", resizeCanvas)
 
-    ctx.fillStyle = gradient
-    ctx.fillRect(0, 0, canvas.width, canvas.height)
+    let animationFrameId: number
+    const waves = [
+      { color: "#ff9933", amplitude: 50, frequency: 0.01, speed: 0.03, offset: -100 },
+      { color: "#ff0066", amplitude: 60, frequency: 0.008, speed: 0.02, offset: -50 },
+      { color: "#ffcc00", amplitude: 40, frequency: 0.012, speed: 0.015, offset: 0 },
+      { color: "#cc0066", amplitude: 55, frequency: 0.009, speed: 0.025, offset: 50 },
+      { color: "#ff3366", amplitude: 65, frequency: 0.007, speed: 0.018, offset: 100 }
+    ]
+
+    let time = 0
+
+    const animate = () => {
+      time += 0.05
+      ctx.clearRect(0, 0, canvas.width, canvas.height)
+
+      waves.forEach((wave) => {
+        ctx.fillStyle = wave.color
+        ctx.beginPath()
+        ctx.moveTo(0, canvas.height)
+
+        for (let x = 0; x <= canvas.width; x += 10) {
+          const y =
+            canvas.height / 2 +
+            wave.amplitude * Math.sin(x * wave.frequency + time * wave.speed) +
+            wave.offset
+          ctx.lineTo(x, y)
+        }
+
+        ctx.lineTo(canvas.width, canvas.height)
+        ctx.lineTo(0, canvas.height)
+        ctx.closePath()
+        ctx.fill()
+      })
+
+      animationFrameId = requestAnimationFrame(animate)
+    }
+
+    animate()
+
+    return () => {
+      window.removeEventListener("resize", resizeCanvas)
+      cancelAnimationFrame(animationFrameId)
+    }
   }, [])
+
+  const handleWhatsAppChat = () => {
+    const phoneNumber = "08035787654"
+    const message = encodeURIComponent("Hello, I'd like to chat with a pharmacist.")
+    window.open(`https://wa.me/${phoneNumber}?text=${message}`, "_blank")
+  }
 
   return (
     <div className="relative w-full h-screen overflow-hidden">
-      {/* Background Canvas */}
-      <canvas
-        ref={canvasRef}
-        className="absolute inset-0 w-full h-full"
-        style={{ zIndex: 0 }}
-      />
+      {/* Animated background */}
+      <canvas ref={canvasRef} className="absolute inset-0 w-full h-full" style={{ zIndex: 0 }} />
 
       {/* Content */}
-      <div className="relative z-10 flex flex-col items-center justify-start w-full h-full text-center px-4 mt-[120px]">
-        <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white drop-shadow-lg mb-6">
+      <div className="relative z-10 flex flex-col items-center justify-end w-full h-full text-center px-4 pb-20">
+        <h1 className="text-3xl md:text-6xl lg:text-7xl font-bold text-white drop-shadow-lg mb-6">
           Welcome to Gleeworld Pharmacy
         </h1>
         <p className="text-xl md:text-2xl text-white max-w-2xl drop-shadow-md">
           Your Dose of Happiness
         </p>
-
-        <div className="mt-8 flex flex-wrap justify-center gap-4">
+        <div className="mt-10 flex flex-wrap justify-center gap-4">
           <button
             onClick={handleWhatsAppChat}
             className="bg-white text-[#ff0066] font-semibold py-3 px-8 rounded-full shadow-lg hover:bg-opacity-90 transition-all duration-300 flex items-center gap-2"
@@ -65,5 +104,3 @@ const HeroSection = () => {
     </div>
   )
 }
-
-export default HeroSection
