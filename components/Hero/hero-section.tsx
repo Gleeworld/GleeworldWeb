@@ -1,70 +1,9 @@
 "use client"
 
-import { useEffect, useRef } from "react"
 import { useRouter } from "next/navigation"
 
 export default function HeroSection() {
   const router = useRouter()
-  const canvasRef = useRef<HTMLCanvasElement>(null)
-
-  useEffect(() => {
-    const canvas = canvasRef.current
-    if (!canvas) return
-
-    const ctx = canvas.getContext("2d")
-    if (!ctx) return
-
-    const resizeCanvas = () => {
-      canvas.width = window.innerWidth
-      canvas.height = window.innerHeight
-    }
-
-    resizeCanvas()
-    window.addEventListener("resize", resizeCanvas)
-
-    let animationFrameId: number
-    const waves = [
-      { color: "#ff6600", amplitude: 60, frequency: 0.008, speed: 0.025, offset: -80 },   // Orange
-      { color: "#cc0099", amplitude: 55, frequency: 0.009, speed: 0.02, offset: -20 },    // Magenta
-      { color: "#c0c0c0", amplitude: 50, frequency: 0.007, speed: 0.03, offset: 30 },     // Silver
-      { color: "#ff3366", amplitude: 45, frequency: 0.012, speed: 0.015, offset: 80 }     // Deep Pink accent
-    ]
-
-    let time = 0
-
-    const animate = () => {
-      time += 0.05
-      ctx.clearRect(0, 0, canvas.width, canvas.height)
-
-      waves.forEach((wave) => {
-        ctx.fillStyle = wave.color
-        ctx.beginPath()
-        ctx.moveTo(0, canvas.height)
-
-        for (let x = 0; x <= canvas.width; x += 10) {
-          const y =
-            canvas.height / 2 +
-            wave.amplitude * Math.sin(x * wave.frequency + time * wave.speed) +
-            wave.offset
-          ctx.lineTo(x, y)
-        }
-
-        ctx.lineTo(canvas.width, canvas.height)
-        ctx.lineTo(0, canvas.height)
-        ctx.closePath()
-        ctx.fill()
-      })
-
-      animationFrameId = requestAnimationFrame(animate)
-    }
-
-    animate()
-
-    return () => {
-      window.removeEventListener("resize", resizeCanvas)
-      cancelAnimationFrame(animationFrameId)
-    }
-  }, [])
 
   const handleWhatsAppChat = () => {
     const phoneNumber = "08035787654"
@@ -74,31 +13,49 @@ export default function HeroSection() {
 
   return (
     <div className="relative w-full h-screen overflow-hidden">
-      {/* Animated background */}
-      <canvas ref={canvasRef} className="absolute inset-0 w-full h-full" style={{ zIndex: 0 }} />
+      {/* Background Waves */}
+      <div className="absolute inset-0 -z-10">
+        <svg viewBox="0 0 1440 600" className="w-full h-full">
+          <path
+            fill="#FFA500" // orange
+            fillOpacity="1"
+            d="M0,192L80,202.7C160,213,320,235,480,250.7C640,267,800,277,960,272C1120,267,1280,245,1360,234.7L1440,224L1440,0L1360,0C1280,0,1120,0,960,0C800,0,640,0,480,0C320,0,160,0,80,0L0,0Z"
+          />
+          <path
+            fill="#FF00FF" // magenta
+            fillOpacity="0.7"
+            d="M0,256L120,272C240,288,480,320,720,314.7C960,309,1200,267,1320,245.3L1440,224L1440,0L1320,0C1200,0,960,0,720,0C480,0,240,0,120,0L0,0Z"
+          />
+          <path
+            fill="#C0C0C0" // silver
+            fillOpacity="0.6"
+            d="M0,320L180,336C360,352,720,384,1080,373.3C1200,368,1320,352,1380,341.3L1440,331L1440,0L1380,0C1320,0,1200,0,1080,0C960,0,720,0,480,0C240,0,120,0,60,0L0,0Z"
+          />
+        </svg>
+      </div>
 
-      {/* Content */}
-      <div className="relative z-10 flex flex-col items-center justify-end w-full h-full text-center px-4 pb-20">
-        <h1 className="text-3xl md:text-6xl lg:text-7xl font-bold text-white drop-shadow-lg mb-6">
+      {/* Main Content */}
+      <div className="flex flex-col justify-center items-center h-full px-6 text-center">
+        <h1 className="text-4xl md:text-6xl font-bold text-white drop-shadow mb-4">
           Welcome to Gleeworld Pharmacy
         </h1>
-        <p className="text-xl md:text-2xl text-white max-w-2xl drop-shadow-md mb-2">
+        <p className="text-xl md:text-2xl text-white mb-2 drop-shadow">
           Your Dose of Happiness
         </p>
-        <p className="text-lg md:text-xl text-white max-w-2xl drop-shadow-sm mb-6">
-          Empowering health, connecting pharmacies, and delivering happiness—one dose at a time.
+        <p className="text-lg md:text-xl text-white max-w-2xl mx-auto mb-8 drop-shadow">
+          Trusted by thousands. Empowering pharmacies. Delivering wellness every day.
         </p>
 
-        <div className="mt-4 flex flex-wrap justify-center gap-4">
+        <div className="flex flex-wrap justify-center gap-4">
           <button
             onClick={handleWhatsAppChat}
-            className="bg-white text-[#cc0099] font-semibold py-3 px-8 rounded-full shadow-lg hover:bg-opacity-90 transition-all duration-300 flex items-center gap-2"
+            className="bg-[#FF00FF] text-white font-semibold py-3 px-8 rounded-full shadow-lg hover:bg-pink-700 transition"
           >
             Shop Now
           </button>
           <button
             onClick={() => router.push("/about")}
-            className="bg-transparent border-2 border-white text-white font-semibold py-3 px-8 rounded-full hover:bg-white hover:bg-opacity-10 transition-all duration-300"
+            className="bg-transparent border-2 border-white text-white font-semibold py-3 px-8 rounded-full hover:bg-white hover:text-[#FF00FF] transition"
           >
             Learn More
           </button>
