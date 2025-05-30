@@ -24,11 +24,10 @@ export default function HeroSection() {
 
     let animationFrameId: number
     const waves = [
-      { color: "#ff9933", amplitude: 50, frequency: 0.01, speed: 0.03, offset: -100 },
-      { color: "#ff0066", amplitude: 60, frequency: 0.008, speed: 0.02, offset: -50 },
-      { color: "#ffcc00", amplitude: 40, frequency: 0.012, speed: 0.015, offset: 0 },
-      { color: "#cc0066", amplitude: 55, frequency: 0.009, speed: 0.025, offset: 50 },
-      { color: "#ff3366", amplitude: 65, frequency: 0.007, speed: 0.018, offset: 100 }
+      { color: "#ff6600", amplitude: 60, frequency: 0.008, speed: 0.025, offset: -80 },   // Orange
+      { color: "#cc0099", amplitude: 55, frequency: 0.009, speed: 0.02, offset: -20 },    // Magenta
+      { color: "#c0c0c0", amplitude: 50, frequency: 0.007, speed: 0.03, offset: 30 },     // Silver
+      { color: "#ff3366", amplitude: 45, frequency: 0.012, speed: 0.015, offset: 80 }     // Deep Pink accent
     ]
 
     let time = 0
@@ -83,13 +82,17 @@ export default function HeroSection() {
         <h1 className="text-3xl md:text-6xl lg:text-7xl font-bold text-white drop-shadow-lg mb-6">
           Welcome to Gleeworld Pharmacy
         </h1>
-        <p className="text-xl md:text-2xl text-white max-w-2xl drop-shadow-md">
+        <p className="text-xl md:text-2xl text-white max-w-2xl drop-shadow-md mb-2">
           Your Dose of Happiness
         </p>
-        <div className="mt-10 flex flex-wrap justify-center gap-4">
+        <p className="text-lg md:text-xl text-white max-w-2xl drop-shadow-sm mb-6">
+          Empowering health, connecting pharmacies, and delivering happiness—one dose at a time.
+        </p>
+
+        <div className="mt-4 flex flex-wrap justify-center gap-4">
           <button
             onClick={handleWhatsAppChat}
-            className="bg-white text-[#ff0066] font-semibold py-3 px-8 rounded-full shadow-lg hover:bg-opacity-90 transition-all duration-300 flex items-center gap-2"
+            className="bg-white text-[#cc0099] font-semibold py-3 px-8 rounded-full shadow-lg hover:bg-opacity-90 transition-all duration-300 flex items-center gap-2"
           >
             Shop Now
           </button>
