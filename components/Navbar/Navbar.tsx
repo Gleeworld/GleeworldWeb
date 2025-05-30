@@ -1,38 +1,32 @@
 "use client"
 
-import { useState } from "react"
+import React, { useState } from "react"
+import { useRouter } from "next/navigation"
 import Image from "next/image"
 import { FiMenu, FiX } from "react-icons/fi"
-import { useRouter } from "next/navigation"
 
 const Navbar = () => {
-  const [menuOpen, setMenuOpen] = useState(false)
   const router = useRouter()
+  const [menuOpen, setMenuOpen] = useState(false)
 
-  // WhatsApp phone number - replace with the actual pharmacist's number
-  const pharmacistNumber = "+2348033875224" // Replace with your actual WhatsApp number
-
-  // Function to open WhatsApp chat
   const openWhatsAppChat = () => {
-    // WhatsApp API URL format
-    const whatsappUrl = `https://wa.me/${pharmacistNumber}`
-    // Open in a new tab
-    window.open(whatsappUrl, "_blank")
+    window.open("https://wa.me/2348028228471", "_blank")
   }
 
   return (
-    <header className="bg-white shadow-md fixed w-full top-0 left-0 z-50">
-      <div className="container mx-auto flex items-center justify-between p-4">
-        {/* Logo */}
-        <div className="flex items-center">
-          {/* Changed logo filename to gleeworld-logo-new.png */}
+    <header className="w-full fixed top-0 left-0 bg-white shadow-md z-50">
+      <div className="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
+        {/* Logo - clearer and responsive */}
+        <div
+          className="relative w-[140px] h-[80px] cursor-pointer"
+          onClick={() => router.push("/")}
+        >
           <Image
             src="/gleeworld-logo-new.png"
-            onClick={() => router.push("/")}
             alt="Gleeworld Logo"
-            width={100}
-            height={140}
-            className="cursor-pointer"
+            fill
+            className="object-contain"
+            priority
           />
         </div>
 
@@ -57,7 +51,7 @@ const Navbar = () => {
           </ul>
         </nav>
 
-        {/* Chat Button & WhatsApp Icon - Now clickable */}
+        {/* Chat Button & WhatsApp Icon */}
         <div
           className="hidden md:flex border border-green-300 p-2 rounded-lg bg-green-500 items-center space-x-3 cursor-pointer hover:bg-green-600 transition-colors"
           onClick={openWhatsAppChat}
