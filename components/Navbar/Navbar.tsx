@@ -10,7 +10,7 @@ const Navbar = () => {
   const router = useRouter()
 
   // WhatsApp phone number - replace with the actual pharmacist's number
-  const pharmacistNumber = "1234567890" // Replace with your actual WhatsApp number
+  const pharmacistNumber = "+2348033875224" // Replace with your actual WhatsApp number
 
   // Function to open WhatsApp chat
   const openWhatsAppChat = () => {
@@ -25,7 +25,7 @@ const Navbar = () => {
       <div className="container mx-auto flex items-center justify-between p-4">
         {/* Logo */}
         <div className="flex items-center">
-          <Image src="/logo (1) 3.png" onClick={() => router.push("/")}   alt="Gleeworld Logo" width={100} height={140} className="cursor-pointer" />
+          <Image src="/Gleeworld-logo.png" onClick={() => router.push("/")} alt="Gleeworld Logo" width={100} height={140} className="cursor-pointer" />
         </div>
 
         {/* Desktop Navigation */}
