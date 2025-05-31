@@ -1,56 +1,93 @@
-"use client"
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Autoplay, Navigation, Pagination } from 'swiper/modules';
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
 
-import { useRouter } from "next/navigation"
+const slides = [
+  {
+    image: 'https://images.unsplash.com/photo-1607746882042-944635dfe10e?auto=format&fit=crop&w=1650&q=80',
+    title: 'Welcome to Gleeworld Pharmacy',
+    subtitle: 'Your Dose of Happiness',
+    pitch: 'Empowering 100+ pharmacies to deliver wellness daily.',
+    buttons: [
+      { text: 'Shop Now', link: '/shop' },
+      { text: 'Learn More', link: '/about' },
+    ],
+  },
+  {
+    image: 'https://images.unsplash.com/photo-1588776814546-ec7d3c98c5d7?auto=format&fit=crop&w=1650&q=80',
+    title: 'Trusted by 100+ Pharmacies',
+    subtitle: 'Supporting communities across Nigeria',
+    pitch: 'We’re building stronger healthcare one connection at a time.',
+    buttons: [
+      { text: 'Join Our Network', link: '/services' },
+    ],
+  },
+  {
+    image: 'https://images.unsplash.com/photo-1607083206967-cc746d0b1df0?auto=format&fit=crop&w=1650&q=80',
+    title: 'Find Medicine Fast',
+    subtitle: 'Introducing the Medfinder App',
+    pitch: 'Connect instantly with nearby pharmacies.',
+    buttons: [
+      { text: 'Download App', link: '/medfinderapp' },
+    ],
+  },
+  {
+    image: 'https://images.unsplash.com/photo-1600154450434-74e3d7c4d585?auto=format&fit=crop&w=1650&q=80',
+    title: 'Access Credit, Grow Faster',
+    subtitle: 'Pharmacy-focused financing',
+    pitch: 'Flexible support for small business owners.',
+    buttons: [
+      { text: 'Get Started', link: '/services' },
+    ],
+  },
+];
 
-export default function HeroSection() {
-  const router = useRouter()
-
-  const handleWhatsAppChat = () => {
-    const phoneNumber = "08035787654"
-    const message = encodeURIComponent("Hello, I’d like to chat with a pharmacist.")
-    window.open(`https://wa.me/${phoneNumber}?text=${message}`, "_blank")
-  }
-
+export default function HeroSlider() {
   return (
-    <div className="relative w-full h-screen bg-gradient-to-br from-[#FF9933] via-[#FF0066] to-[#C0C0C0] overflow-hidden">
-
-      {/* Abstract Shapes */}
-      <svg className="absolute top-0 left-0 w-full h-full z-0" viewBox="0 0 1440 600" preserveAspectRatio="none">
-        <ellipse cx="200" cy="100" rx="160" ry="60" fill="#FF0066" opacity="0.3" />
-        <ellipse cx="600" cy="250" rx="300" ry="90" fill="#FF9933" opacity="0.3" />
-        <ellipse cx="1000" cy="150" rx="220" ry="80" fill="#C0C0C0" opacity="0.2" />
-        <ellipse cx="300" cy="520" rx="260" ry="80" fill="#FF0066" opacity="0.2" />
-        <ellipse cx="900" cy="450" rx="220" ry="70" fill="#FF9933" opacity="0.25" />
-        <ellipse cx="1300" cy="300" rx="200" ry="75" fill="#C0C0C0" opacity="0.25" />
-      </svg>
-
-      {/* Content */}
-      <div className="relative z-10 flex flex-col items-center justify-center h-full text-center px-6">
-        <h1 className="text-white text-5xl md:text-6xl font-bold drop-shadow mb-4">
-          Welcome to Gleeworld Pharmacy
-        </h1>
-        <p className="text-white text-2xl md:text-3xl font-light mb-3 drop-shadow">
-          Your Dose of Happiness
-        </p>
-        <p className="text-white text-lg md:text-xl mb-8 drop-shadow">
-          Pharmacy made joyful.
-        </p>
-
-        <div className="flex flex-wrap justify-center gap-4">
-          <button
-            onClick={handleWhatsAppChat}
-            className="bg-white text-[#FF0066] font-semibold py-3 px-8 rounded-full shadow-lg hover:bg-pink-100 transition"
-          >
-            Shop Now
-          </button>
-          <button
-            onClick={() => router.push("/about")}
-            className="bg-transparent border-2 border-white text-white font-semibold py-3 px-8 rounded-full hover:bg-white hover:text-[#FF0066] transition"
-          >
-            Learn More
-          </button>
-        </div>
-      </div>
-    </div>
-  )
+    <section className="relative w-full h-[100vh]">
+      <Swiper
+        modules={[Autoplay, Navigation, Pagination]}
+        autoplay={{ delay: 5000 }}
+        navigation
+        pagination={{ clickable: true }}
+        loop
+        className="w-full h-full"
+      >
+        {slides.map((slide, index) => (
+          <SwiperSlide key={index}>
+            <div
+              className="relative w-full h-full bg-cover bg-center flex items-center justify-center text-white"
+              style={{ backgroundImage: `url(${slide.image})` }}
+            >
+              <div className="absolute inset-0 bg-gradient-to-r from-[#FF0066]/70 via-[#FF9933]/60 to-silver/40"></div>
+              <div className="relative z-10 text-center max-w-3xl px-4">
+                <h1 className="text-4xl md:text-6xl font-bold mb-4 drop-shadow-md">
+                  {slide.title}
+                </h1>
+                <h2 className="text-2xl md:text-3xl mb-2 font-semibold">
+                  {slide.subtitle}
+                </h2>
+                <p className="mb-6 text-lg md:text-xl">
+                  {slide.pitch}
+                </p>
+                <div className="flex justify-center gap-4 flex-wrap">
+                  {slide.buttons.map((btn, i) => (
+                    <a
+                      key={i}
+                      href={btn.link}
+                      className="bg-white text-[#FF0066] font-medium px-6 py-3 rounded-full hover:bg-[#FF9933] hover:text-white transition"
+                    >
+                      {btn.text}
+                    </a>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </SwiperSlide>
+        ))}
+      </Swiper>
+    </section>
+  );
 }
