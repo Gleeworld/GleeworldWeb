@@ -1,45 +1,55 @@
-"use client";
+// components/Hero/hero-section.tsx
 
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay, Pagination, Navigation } from "swiper/modules";
-import Image from "next/image";
-import "swiper/css";
-import "swiper/css/navigation";
-import "swiper/css/pagination";
-import "swiper/css/autoplay";
+'use client';
+
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Autoplay, Navigation, Pagination } from 'swiper/modules';
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+import Image from 'next/image';
+import Link from 'next/link';
 
 const slides = [
   {
-    title: "Your Dose of Happiness",
-    subtitle: "Trusted by 100+ pharmacies across Nigeria",
-    image: "https://images.unsplash.com/photo-1588776814546-aeba1c27b5d9?auto=format&fit=crop&w=1470&q=80",
+    image:
+      'https://images.unsplash.com/photo-1588776814546-ec7e796b6e9f?auto=format&fit=crop&w=1400&q=80',
+    heading: 'Welcome to Gleeworld Pharmacy',
+    subheading: 'Your Dose of Happiness',
+    pitch: 'Empowering 100+ pharmacies with fast, affordable solutions.',
   },
   {
-    title: "Empowering Community Pharmacies",
-    subtitle: "Technology. Logistics. Financial Support.",
-    image: "https://images.unsplash.com/photo-1576765607924-b80134888a6c?auto=format&fit=crop&w=1470&q=80",
+    image:
+      'https://images.unsplash.com/photo-1580281658629-08b1fdc6b6b5?auto=format&fit=crop&w=1400&q=80',
+    heading: 'Trusted by Hundreds',
+    subheading: 'Reliable Care, Nationwide Reach',
+    pitch: 'From urban centres to rural areas, we’ve got you covered.',
   },
   {
-    title: "We Deliver Wellness",
-    subtitle: "Fast access to medicines & health solutions.",
-    image: "https://images.unsplash.com/photo-1588776814702-d61d4d8d23df?auto=format&fit=crop&w=1470&q=80",
+    image:
+      'https://images.unsplash.com/photo-1607746882042-944635dfe10e?auto=format&fit=crop&w=1400&q=80',
+    heading: 'Innovative Pharma Tech',
+    subheading: 'Built for Community Pharmacies',
+    pitch: 'Tech-powered tools to manage, grow, and scale easily.',
   },
   {
-    title: "Grow Your Pharmacy with Us",
-    subtitle: "Join Gleeworld and scale your impact.",
-    image: "https://images.unsplash.com/photo-1586275945090-977f07f4a373?auto=format&fit=crop&w=1470&q=80",
+    image:
+      'https://images.unsplash.com/photo-1588776814180-52edbba34f02?auto=format&fit=crop&w=1400&q=80',
+    heading: 'Your Pharmacy Partner',
+    subheading: 'Affordable Drugs, Fast Delivery',
+    pitch: 'Enabling better health outcomes every day.',
   },
 ];
 
-const HeroSlider = () => {
+export default function FlowHero() {
   return (
-    <section className="relative w-full h-[90vh]">
+    <section className="w-full h-[90vh] overflow-hidden relative">
       <Swiper
-        modules={[Autoplay, Pagination, Navigation]}
-        autoplay={{ delay: 4000, disableOnInteraction: false }}
+        modules={[Autoplay, Navigation, Pagination]}
+        autoplay={{ delay: 5000 }}
+        loop
+        navigation
         pagination={{ clickable: true }}
-        navigation={true}
-        loop={true}
         className="w-full h-full"
       >
         {slides.map((slide, index) => (
@@ -47,21 +57,29 @@ const HeroSlider = () => {
             <div className="relative w-full h-full">
               <Image
                 src={slide.image}
-                alt={slide.title}
-                layout="fill"
-                objectFit="cover"
-                className="brightness-75"
+                alt={slide.heading}
+                fill
+                priority
+                className="object-cover"
               />
-              <div className="absolute inset-0 flex flex-col items-center justify-center text-center text-white px-4">
-                <h1 className="text-4xl md:text-6xl font-bold mb-4">{slide.title}</h1>
-                <p className="text-lg md:text-2xl mb-6">{slide.subtitle}</p>
-                <div className="flex space-x-4">
-                  <button className="bg-[#FF9933] text-white px-6 py-3 rounded-full text-lg font-semibold hover:bg-[#e57d10] transition">
+              <div className="absolute inset-0 bg-gradient-to-r from-[#FF0066]/80 via-[#FF9933]/70 to-slate-200/60 z-10"></div>
+              <div className="absolute inset-0 flex flex-col justify-center items-start text-white z-20 px-8 md:px-20">
+                <h1 className="text-3xl md:text-5xl font-bold mb-4">{slide.heading}</h1>
+                <p className="text-xl md:text-2xl font-semibold mb-2">{slide.subheading}</p>
+                <p className="text-base md:text-lg max-w-xl mb-6">{slide.pitch}</p>
+                <div className="flex gap-4">
+                  <Link
+                    href="#shop"
+                    className="bg-white text-[#FF0066] px-6 py-3 rounded-xl font-semibold hover:bg-gray-100 transition"
+                  >
                     Shop Now
-                  </button>
-                  <button className="bg-[#FF0066] text-white px-6 py-3 rounded-full text-lg font-semibold hover:bg-[#cc0052] transition">
+                  </Link>
+                  <Link
+                    href="#learn"
+                    className="border border-white text-white px-6 py-3 rounded-xl font-semibold hover:bg-white hover:text-[#FF0066] transition"
+                  >
                     Learn More
-                  </button>
+                  </Link>
                 </div>
               </div>
             </div>
@@ -70,6 +88,4 @@ const HeroSlider = () => {
       </Swiper>
     </section>
   );
-};
-
-export default HeroSlider;
+}
