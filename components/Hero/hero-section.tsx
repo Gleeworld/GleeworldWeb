@@ -1,87 +1,67 @@
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Autoplay, Navigation, Pagination } from 'swiper/modules';
-import 'swiper/css';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
+"use client";
+
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay, Pagination, Navigation } from "swiper/modules";
+import Image from "next/image";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+import "swiper/css/autoplay";
 
 const slides = [
   {
-    image: 'https://images.unsplash.com/photo-1607746882042-944635dfe10e?auto=format&fit=crop&w=1650&q=80',
-    title: 'Welcome to Gleeworld Pharmacy',
-    subtitle: 'Your Dose of Happiness',
-    pitch: 'Empowering 100+ pharmacies to deliver wellness daily.',
-    buttons: [
-      { text: 'Shop Now', link: '/shop' },
-      { text: 'Learn More', link: '/about' },
-    ],
+    title: "Your Dose of Happiness",
+    subtitle: "Trusted by 100+ pharmacies across Nigeria",
+    image: "https://images.unsplash.com/photo-1588776814546-aeba1c27b5d9?auto=format&fit=crop&w=1470&q=80",
   },
   {
-    image: 'https://images.unsplash.com/photo-1588776814546-ec7d3c98c5d7?auto=format&fit=crop&w=1650&q=80',
-    title: 'Trusted by 100+ Pharmacies',
-    subtitle: 'Supporting communities across Nigeria',
-    pitch: 'We’re building stronger healthcare one connection at a time.',
-    buttons: [
-      { text: 'Join Our Network', link: '/services' },
-    ],
+    title: "Empowering Community Pharmacies",
+    subtitle: "Technology. Logistics. Financial Support.",
+    image: "https://images.unsplash.com/photo-1576765607924-b80134888a6c?auto=format&fit=crop&w=1470&q=80",
   },
   {
-    image: 'https://images.unsplash.com/photo-1607083206967-cc746d0b1df0?auto=format&fit=crop&w=1650&q=80',
-    title: 'Find Medicine Fast',
-    subtitle: 'Introducing the Medfinder App',
-    pitch: 'Connect instantly with nearby pharmacies.',
-    buttons: [
-      { text: 'Download App', link: '/medfinderapp' },
-    ],
+    title: "We Deliver Wellness",
+    subtitle: "Fast access to medicines & health solutions.",
+    image: "https://images.unsplash.com/photo-1588776814702-d61d4d8d23df?auto=format&fit=crop&w=1470&q=80",
   },
   {
-    image: 'https://images.unsplash.com/photo-1600154450434-74e3d7c4d585?auto=format&fit=crop&w=1650&q=80',
-    title: 'Access Credit, Grow Faster',
-    subtitle: 'Pharmacy-focused financing',
-    pitch: 'Flexible support for small business owners.',
-    buttons: [
-      { text: 'Get Started', link: '/services' },
-    ],
+    title: "Grow Your Pharmacy with Us",
+    subtitle: "Join Gleeworld and scale your impact.",
+    image: "https://images.unsplash.com/photo-1586275945090-977f07f4a373?auto=format&fit=crop&w=1470&q=80",
   },
 ];
 
-export default function HeroSlider() {
+const HeroSlider = () => {
   return (
-    <section className="relative w-full h-[100vh]">
+    <section className="relative w-full h-[90vh]">
       <Swiper
-        modules={[Autoplay, Navigation, Pagination]}
-        autoplay={{ delay: 5000 }}
-        navigation
+        modules={[Autoplay, Pagination, Navigation]}
+        autoplay={{ delay: 4000, disableOnInteraction: false }}
         pagination={{ clickable: true }}
-        loop
+        navigation={true}
+        loop={true}
         className="w-full h-full"
       >
         {slides.map((slide, index) => (
           <SwiperSlide key={index}>
-            <div
-              className="relative w-full h-full bg-cover bg-center flex items-center justify-center text-white"
-              style={{ backgroundImage: `url(${slide.image})` }}
-            >
-              <div className="absolute inset-0 bg-gradient-to-r from-[#FF0066]/70 via-[#FF9933]/60 to-silver/40"></div>
-              <div className="relative z-10 text-center max-w-3xl px-4">
-                <h1 className="text-4xl md:text-6xl font-bold mb-4 drop-shadow-md">
-                  {slide.title}
-                </h1>
-                <h2 className="text-2xl md:text-3xl mb-2 font-semibold">
-                  {slide.subtitle}
-                </h2>
-                <p className="mb-6 text-lg md:text-xl">
-                  {slide.pitch}
-                </p>
-                <div className="flex justify-center gap-4 flex-wrap">
-                  {slide.buttons.map((btn, i) => (
-                    <a
-                      key={i}
-                      href={btn.link}
-                      className="bg-white text-[#FF0066] font-medium px-6 py-3 rounded-full hover:bg-[#FF9933] hover:text-white transition"
-                    >
-                      {btn.text}
-                    </a>
-                  ))}
+            <div className="relative w-full h-full">
+              <Image
+                src={slide.image}
+                alt={slide.title}
+                layout="fill"
+                objectFit="cover"
+                className="brightness-75"
+              />
+              <div className="absolute inset-0 flex flex-col items-center justify-center text-center text-white px-4">
+                <h1 className="text-4xl md:text-6xl font-bold mb-4">{slide.title}</h1>
+                <p className="text-lg md:text-2xl mb-6">{slide.subtitle}</p>
+                <div className="flex space-x-4">
+                  <button className="bg-[#FF9933] text-white px-6 py-3 rounded-full text-lg font-semibold hover:bg-[#e57d10] transition">
+                    Shop Now
+                  </button>
+                  <button className="bg-[#FF0066] text-white px-6 py-3 rounded-full text-lg font-semibold hover:bg-[#cc0052] transition">
+                    Learn More
+                  </button>
                 </div>
               </div>
             </div>
@@ -90,4 +70,6 @@ export default function HeroSlider() {
       </Swiper>
     </section>
   );
-}
+};
+
+export default HeroSlider;
