@@ -1,6 +1,4 @@
-// pages/index.tsx or app/page.tsx
-
-import FlowHero from "@/components/Hero/hero-section"; // ✅ should match
+import FlowHero from "@/components/Hero/hero-section";
 
 export default function Home() {
   return (
