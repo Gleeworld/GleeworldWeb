@@ -3,14 +3,13 @@ import Image from 'next/image';
 
 export default function FlowHero() {
   return (
-    <section className="relative w-full min-h-[600px] max-h-[700px] overflow-hidden">
+    <section className="relative w-full h-[90vh] max-h-[800px] overflow-hidden">
       <Image
         src="/A_promotional_digital_graphic_for_Gleeworld_Pharma.png"
         alt="Gleeworld Hero"
-        layout="fill"
-        objectFit="cover"
+        fill
+        className="object-cover z-0"
         priority
-        className="z-0"
       />
 
       <div className="absolute inset-0 flex flex-col items-center justify-center text-white bg-black/40 z-10 text-center px-4">
