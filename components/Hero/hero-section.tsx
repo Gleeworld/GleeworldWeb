@@ -5,8 +5,8 @@ export default function FlowHero() {
   return (
     <section className="relative w-full h-[90vh] max-h-[800px] overflow-hidden">
       <Image
-        src="/A_promotional_digital_graphic_for_Gleeworld_Pharma.png"
-        alt="Gleeworld Hero"
+        src="/hero-banner.png"
+        alt="Gleeworld Hero Banner"
         fill
         className="object-cover z-0"
         priority
