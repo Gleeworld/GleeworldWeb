@@ -1,10 +1,10 @@
 import FlowHero from "@/components/Hero/hero-section";
 
-export default function Home() {
+export default function Page() {
   return (
     <>
       <FlowHero />
-      {/* other components */}
+      {/* Add other sections/components below */}
     </>
   );
 }
