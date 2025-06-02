@@ -1,11 +1,12 @@
-import FlowHero from "../components/Hero/hero-section";
-// Other imports...
+// pages/index.tsx or app/page.tsx
+
+import FlowHero from "@/components/Hero/hero-section"; // ✅ should match
 
 export default function Home() {
   return (
-    <main>
+    <>
       <FlowHero />
-      {/* ... other components */}
-    </main>
+      {/* other components */}
+    </>
   );
 }
