@@ -1,59 +1,34 @@
-// components/Hero/Hero1.tsx
-"use client"
+'use client';
+import Image from 'next/image';
 
-import Image from "next/image";
-import { useRouter } from "next/navigation";
-
-const Hero1 = () => {
-  const router = useRouter();
-
+export default function FlowHero() {
   return (
-    <section className="relative w-full h-[90vh] md:h-screen flex items-center justify-center overflow-hidden">
-      {/* Background image */}
+    <section className="relative h-screen w-full">
       <Image
-        src="/hero-bg.png"
-        alt="Gleeworld Hero Background"
+        src="/A_promotional_digital_graphic_for_Gleeworld_Pharma.png"
+        alt="Gleeworld Pharmacy Hero"
         layout="fill"
         objectFit="cover"
         priority
         className="z-0"
       />
-
-      {/* Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-br from-[#FF0066]/70 via-[#FF9933]/60 to-white/80 z-10" />
-
-      {/* Content */}
-      <div className="relative z-20 text-center px-6 max-w-3xl mx-auto">
-        <h1 className="text-white text-4xl md:text-5xl font-bold leading-tight">
+      <div className="absolute inset-0 bg-black/40 z-10" />
+      <div className="relative z-20 flex flex-col items-center justify-center text-center h-full px-4 text-white">
+        <h1 className="text-4xl md:text-6xl font-bold mb-4">
           Welcome to Gleeworld Pharmacy
         </h1>
-        <p className="text-white text-xl mt-4 mb-6 font-medium">
+        <p className="text-lg md:text-2xl mb-6 font-light">
           Your Dose of Happiness
         </p>
-
-        {/* Catchy Pitch Line */}
-        <p className="text-white text-lg md:text-xl mb-8">
-          Trusted by 100+ pharmacies, delivering wellness with a smile.
-        </p>
-
-        {/* Buttons */}
-        <div className="flex justify-center space-x-4">
-          <button
-            onClick={() => router.push("/shop")}
-            className="bg-white text-[#FF0066] font-semibold px-6 py-3 rounded-full hover:bg-[#FF9933] hover:text-white transition"
-          >
+        <div className="flex gap-4 flex-wrap justify-center">
+          <button className="bg-[#FF0066] hover:bg-pink-600 text-white font-semibold py-3 px-6 rounded-full shadow-lg transition">
             Shop Now
           </button>
-          <button
-            onClick={() => router.push("/about")}
-            className="border-2 border-white text-white font-semibold px-6 py-3 rounded-full hover:bg-white hover:text-[#FF0066] transition"
-          >
+          <button className="bg-white hover:bg-gray-200 text-[#FF0066] font-semibold py-3 px-6 rounded-full shadow-lg transition">
             Learn More
           </button>
         </div>
       </div>
     </section>
   );
-};
-
-export default Hero1;
+}
