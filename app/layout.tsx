@@ -5,16 +5,16 @@ import Navbar from "@/components/Navbar/Navbar";
 import Newsletter from "@/components/NewsLetter/newsForm";
 import Footer from "@/components/Footer/footer";
 
-// Fonts
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
+// // Fonts
+// const geistSans = Geist({
+//   variable: "--font-geist-sans",
+//   subsets: ["latin"],
+// });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
+// const geistMono = Geist_Mono({
+//   variable: "--font-geist-mono",
+//   subsets: ["latin"],
+// });
 
 // Metadata
 export const metadata: Metadata = {
@@ -37,7 +37,7 @@ export default function RootLayout({
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta charSet="utf-8" />
       </head>
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+      <body className={`antialiased`}>
         <Navbar />
         {children}
         <Newsletter />
