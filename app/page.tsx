@@ -1,8 +1,8 @@
 import FlowHero from "@/components/Hero/hero-section";
 import Services from "@/components/Services/services";
 import Stats from "@/components/Stats/stats";
+import MedfinderPromo from "@/components/Medfinder/MedfinderPromo"; // Simple promo
 import NewsSection from "@/components/News/NewsSection";
-import MedfinderPromo from "@/components/Medfinder/MedfinderPromo";
 import ContactForm from "@/components/Contact/ContactForm";
 
 export default function Page() {
@@ -11,14 +11,9 @@ export default function Page() {
       <FlowHero />
       <Services />
       <Stats />
-      <MedfinderPromo />
+      <MedfinderPromo /> {/* Simple link to medfinder.com.ng */}
       <NewsSection title="Healthcare News" subheading="Stay Informed" />
-      <ContactForm 
-        title="Contact Us" 
-        topText="Get in Touch" 
-        subHeading="We're Here to Help" 
-        details="Reach out for any questions about our pharmacy services"  
-      />
+      <ContactForm />
     </main>
   );
 }
