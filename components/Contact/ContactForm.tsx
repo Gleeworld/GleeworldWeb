@@ -26,7 +26,7 @@ export default function ContactForm({
                 <label className="block text-dark-gray mb-2">Full Name</label>
                 <input 
                   type="text" 
-                  className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-magneta"
+                  className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-magneta transition-all"
                   placeholder="Enter your full name"
                 />
               </div>
@@ -34,7 +34,7 @@ export default function ContactForm({
                 <label className="block text-dark-gray mb-2">Email Address</label>
                 <input 
                   type="email" 
-                  className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-magneta"
+                  className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-magneta transition-all"
                   placeholder="Enter your email"
                 />
               </div>
@@ -44,7 +44,7 @@ export default function ContactForm({
               <label className="block text-dark-gray mb-2">Subject</label>
               <input 
                 type="text" 
-                className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-magneta"
+                className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-magneta transition-all"
                 placeholder="What is this regarding?"
               />
             </div>
@@ -53,14 +53,22 @@ export default function ContactForm({
               <label className="block text-dark-gray mb-2">Message</label>
               <textarea 
                 rows={6}
-                className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-magneta"
+                className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-magneta transition-all"
                 placeholder="Tell us how we can help you..."
               ></textarea>
             </div>
             
             <button 
               type="submit"
-              className="bg-magneta text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-opacity-90 transition-all w-full md:w-auto"
+              className="bg-magneta text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-orange transition-all duration-300 transform hover:scale-105 w-full md:w-auto"
+              onMouseOver={(e) => {
+                e.currentTarget.style.transform = 'scale(1.05)';
+                e.currentTarget.style.backgroundColor = '#FF6B35';
+              }}
+              onMouseOut={(e) => {
+                e.currentTarget.style.transform = 'scale(1)';
+                e.currentTarget.style.backgroundColor = '#E10075';
+              }}
             >
               Send Message
             </button>
