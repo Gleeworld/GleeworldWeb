@@ -3,19 +3,23 @@
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --magneta: #E10075;
+  --orange: #FF6B35;
+  --silver: #F8F9FA;
+  --dark-gray: #333333;
 }
 
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--silver);
+  color: var(--dark-gray);
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom gradients */
+.gradient-magneta-orange {
+  background: linear-gradient(135deg, var(--magneta), var(--orange));
 }
