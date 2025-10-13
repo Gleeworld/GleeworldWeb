@@ -18,12 +18,12 @@ export default function NewsSection({ subheading, title }: Props) {
     {
       id: '2',
       title: 'Innovative technology tools by Gleeworld are transforming small independent pharmacies.',
-      description: 'Discover how Gleeworld\'s cutting-edge technology is revolutionizing the landscape for small independent pharmacies, setting a...',
+      description: 'Discover how Gleeworld's cutting-edge technology is revolutionizing the landscape for small independent pharmacies, setting a...',
       image: '/Frame 427319431 (4).png',
     },
     {
       id: '3',
-      title: 'Introducing Open Patient: MedFinder App Revolutionizes Patient Access to Care',
+      title: 'Introducing Open Patient: Medfinder App Revolutionizes Patient Access to Care',
       description: 'Effortlessly store and manage your medical information in the cloud, ensuring secure, immediate access to your health records...',
       image: '/Frame 427319431 (5).png',
     },
