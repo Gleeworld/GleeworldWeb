@@ -1,34 +1,46 @@
-import React from "react";
-import Image from "next/image";
-
-const MedfinderPromo = () => {
+export default function MedfinderPromo() {
   return (
-    <section className="flex flex-col md:flex-row items-center justify-between bg-orange-400 text-white px-6 md:px-16 py-12 w-11/12 mx-auto rounded-xl">
-      {/* Left Side - Text Content */}
-      <div className="md:w-1/2">
-        <h2 className="text-3xl md:text-4xl font-bold mb-4">
-          Save time and money with Medfinder
-        </h2>
-        <p className="text-lg mb-6">
-            Discover a simpler way to access the medicines you need. Medfinder connects you to nearby pharmacies, helping you save time, reduce costs, and get trusted care—fast and hassle-free. Experience affordability, convenience, and availability like never before. Get started today!
-        </p>
-        <button className="bg-white border border-gray-500 text-black px-6 py-3 rounded-full font-semibold hover:bg-gray-200 transition">
-          Download Medfinder
-        </button>
-      </div>
+    <section className="py-20 bg-gradient-to-r from-magneta to-orange">
+      <div className="max-w-6xl mx-auto px-4">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          
+          {/* Text Content */}
+          <div className="text-white">
+            <h2 className="text-4xl md:text-5xl font-bold mb-6">
+              Save time and money with <span className="text-silver">Medfinder</span>
+            </h2>
+            <p className="text-xl mb-8 leading-relaxed">
+              Discover a simpler way to access the medicines you need. Medfinder connects you to nearby pharmacies, helping you save time, reduce costs, and get trusted care—fast and hassle-free. Experience affordability, convenience, and availability like never before. Get started today!
+            </p>
+            
+            <div className="flex flex-col sm:flex-row gap-4">
+              <a 
+                href="https://medfinder.com.ng" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="bg-white text-magneta px-8 py-4 rounded-full text-lg font-semibold hover:bg-opacity-90 transition-all text-center"
+              >
+                Visit Medfinder.com.ng
+              </a>
+              <button className="border-2 border-white text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-white hover:text-magneta transition-all">
+                Download Medfinder
+              </button>
+            </div>
+          </div>
 
-      {/* Right Side - Mobile Image */}
-      <div className="md:w-1/2 flex justify-center">
-        <Image
-          src="/Homepage 1.png" // Move the uploaded image to public/assets
-          alt="Medfinder App"
-          width={400}
-          height={400}
-          className="rounded-lg shadow-lg"
-        />
+          {/* App Mockup/Image Placeholder */}
+          <div className="flex justify-center">
+            <div className="bg-white bg-opacity-20 rounded-2xl p-8 backdrop-blur-sm border border-white border-opacity-30">
+              <div className="text-center text-white">
+                <div className="text-6xl mb-4">📱</div>
+                <h3 className="text-2xl font-bold mb-2">Medfinder App</h3>
+                <p className="opacity-90">Your pharmacy companion</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
       </div>
     </section>
   );
-};
-
-export default MedfinderPromo;
+}
