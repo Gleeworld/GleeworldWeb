@@ -1,114 +1,71 @@
-// src/components/ContactForm.tsx
-'use client';
-
-import { useState } from 'react';
-import { contactFormSchema } from '@/app/lib/validation';
-import { z } from 'zod';
-
-type Props = {
-  title: string;
-  details: string;
-  topText: string;
-  subHeading: string;
+interface ContactFormProps {
+  title?: string;
+  topText?: string;
+  subHeading?: string;
+  details?: string;
 }
 
-export default function ContactForm({ title, details, topText, subHeading }: Props) {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    message: '',
-  });
-  const [errors, setErrors] = useState<Record<string, string>>({});
-  const [isSubmitting, setIsSubmitting] = useState(false);
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-    
-    try {
-      const validatedData = contactFormSchema.parse(formData);
-      // Here you would typically send the data to your API
-      console.log('Form submitted:', validatedData);
-      setFormData({ name: '', email: '', message: '' });
-      setErrors({});
-    } catch (error) {
-      if (error instanceof z.ZodError) {
-        const errorMessages: Record<string, string> = {};
-        error.errors.forEach((err) => {
-          if (err.path) {
-            errorMessages[err.path[0]] = err.message;
-          }
-        });
-        setErrors(errorMessages);
-      }
-    } finally {
-      setIsSubmitting(false);
-    }
-  };
-
+export default function ContactForm({ 
+  title = "Contact Us", 
+  topText = "Get in Touch",
+  subHeading = "We're Here to Help",
+  details = "Reach out for any questions about our pharmacy services"
+}: ContactFormProps) {
   return (
-    <section className="bg-gray-50 py-16">
-      <div className="container mx-auto px-4 max-w-2xl">
-        <p className='text-center mb-8'> {`${topText}`}</p>
-        <h2 className="text-3xl font-bold text-center mb-8">{`${title}`}</h2>
-        <h3 className='text-xl font-bold text-center mb-8'>{`${subHeading}`}</h3>
-        <p className="text-center mb-8">
-       {`${details}`}
-        </p>
-        <form onSubmit={handleSubmit} className="space-y-6">
-          <div>
-            <label htmlFor="name" className="block text-gray-700 mb-2">
-              Name
-            </label>
-            <input
-              type="text"
-              id="name"
-              value={formData.name}
-              onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-              className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500"
-            />
-            {errors.name && (
-              <p className="text-red-500 text-sm mt-1">{errors.name}</p>
-            )}
-          </div>
-          <div>
-            <label htmlFor="email" className="block text-gray-700 mb-2">
-              Email
-            </label>
-            <input
-              type="email"
-              id="email"
-              value={formData.email}
-              onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-              className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500"
-            />
-            {errors.email && (
-              <p className="text-red-500 text-sm mt-1">{errors.email}</p>
-            )}
-          </div>
-          <div>
-            <label htmlFor="message" className="block text-gray-700 mb-2">
-              Message
-            </label>
-            <textarea
-              id="message"
-              value={formData.message}
-              onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-              rows={4}
-              className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500"
-            />
-            {errors.message && (
-              <p className="text-red-500 text-sm mt-1">{errors.message}</p>
-            )}
-          </div>
-          <button
-            type="submit"
-            disabled={isSubmitting}
-            className="w-full bg-orange-500 text-white py-3 rounded-lg hover:bg-orange-600 transition-colors disabled:bg-orange-300"
-          >
-            {isSubmitting ? 'Sending...' : 'Send message'}
-          </button>
-        </form>
+    <section className="py-20 bg-white">
+      <div className="max-w-4xl mx-auto px-4">
+        <div className="text-center mb-12">
+          <h2 className="text-4xl font-bold text-dark-gray mb-4">{title}</h2>
+          <p className="text-xl text-gray-600">{details}</p>
+        </div>
+        
+        <div className="bg-silver rounded-2xl p-8 md:p-12">
+          <form className="space-y-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div>
+                <label className="block text-dark-gray mb-2">Full Name</label>
+                <input 
+                  type="text" 
+                  className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-magneta"
+                  placeholder="Enter your full name"
+                />
+              </div>
+              <div>
+                <label className="block text-dark-gray mb-2">Email Address</label>
+                <input 
+                  type="email" 
+                  className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-magneta"
+                  placeholder="Enter your email"
+                />
+              </div>
+            </div>
+            
+            <div>
+              <label className="block text-dark-gray mb-2">Subject</label>
+              <input 
+                type="text" 
+                className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-magneta"
+                placeholder="What is this regarding?"
+              />
+            </div>
+            
+            <div>
+              <label className="block text-dark-gray mb-2">Message</label>
+              <textarea 
+                rows={6}
+                className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-magneta"
+                placeholder="Tell us how we can help you..."
+              ></textarea>
+            </div>
+            
+            <button 
+              type="submit"
+              className="bg-magneta text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-opacity-90 transition-all w-full md:w-auto"
+            >
+              Send Message
+            </button>
+          </form>
+        </div>
       </div>
     </section>
   );
