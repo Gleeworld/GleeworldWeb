@@ -1,44 +1,36 @@
 export default function MedfinderPromo() {
   return (
-    <section className="py-20 bg-gradient-to-r from-magneta to-orange">
-      <div className="max-w-6xl mx-auto px-4">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          
-          {/* Text Content */}
-          <div className="text-white">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6">
-              Save time and money with <span className="text-silver">Medfinder</span>
-            </h2>
-            <p className="text-xl mb-8 leading-relaxed">
-              Discover a simpler way to access the medicines you need. Medfinder connects you to nearby pharmacies, helping you save time, reduce costs, and get trusted care—fast and hassle-free. Experience affordability, convenience, and availability like never before. Get started today!
-            </p>
-            
-            <div className="flex flex-col sm:flex-row gap-4">
-              <a 
-                href="https://medfinder.com.ng" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="bg-white text-magneta px-8 py-4 rounded-full text-lg font-semibold hover:bg-opacity-90 transition-all text-center"
-              >
-                Visit Medfinder.com.ng
-              </a>
-              <button className="border-2 border-white text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-white hover:text-magneta transition-all">
-                Download Medfinder
-              </button>
-            </div>
-          </div>
+    <section className="py-20 bg-white">
+      <div className="max-w-4xl mx-auto px-4 text-center">
+        <h2 className="text-4xl md:text-5xl font-bold mb-6 text-dark-gray">
+          Save time and money with <span className="text-magneta">Medfinder</span>
+        </h2>
+        
+        <p className="text-xl md:text-2xl mb-8 leading-relaxed text-gray-700 max-w-3xl mx-auto">
+          Discover a simpler way to access the medicines you need. Medfinder connects you to nearby pharmacies, helping you save time, reduce costs, and get trusted care.
+        </p>
 
-          {/* App Mockup/Image Placeholder */}
-          <div className="flex justify-center">
-            <div className="bg-white bg-opacity-20 rounded-2xl p-8 backdrop-blur-sm border border-white border-opacity-30">
-              <div className="text-center text-white">
-                <div className="text-6xl mb-4">📱</div>
-                <h3 className="text-2xl font-bold mb-2">Medfinder App</h3>
-                <p className="opacity-90">Your pharmacy companion</p>
-              </div>
-            </div>
-          </div>
+        <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+          <a 
+            href="https://medfinder.com.ng" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="bg-magneta text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-opacity-90 transition-all min-w-[250px]"
+          >
+            Visit Medfinder.com.ng
+          </a>
+          <a 
+            href="https://medfinder.com.ng/download" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="border-2 border-orange text-orange px-8 py-4 rounded-full text-lg font-semibold hover:bg-orange hover:text-white transition-all min-w-[250px]"
+          >
+            Download App
+          </a>
+        </div>
 
+        <div className="mt-8 text-sm text-gray-600">
+          Available on iOS and Android
         </div>
       </div>
     </section>
