@@ -3,32 +3,35 @@ import Section from '@/components/sectionHeader/section';
 import NewsSection from '@/components/News/NewsSection';
 import ContactForm from '@/components/Contact/ContactForm';
 
-
-
-//type Props = {};
-
-function page({}) {
+function Page() {
   return (
-    <div>
+    <div className="min-h-screen bg-silver">
         <Section />
-
-        <div>
-            <div className=' flex-col text-center items-center gap-5 pt-15'>
-            <p>Trending</p>
-            <h1 className='text-3xl text-black'>Top Stories</h1>
+        
+        <div className="max-w-6xl mx-auto px-4 py-12">
+            {/* Header */}
+            <div className='flex flex-col text-center items-center gap-4 mb-12'>
+              <p className="text-lg text-magneta font-semibold">Trending</p>
+              <h1 className='text-4xl font-bold text-dark-gray'>Top Health Stories</h1>
+              <p className="text-gray-600 max-w-2xl">Stay updated with the latest healthcare news and pharmacy innovations</p>
             </div>
 
-            <NewsSection subheading={"Trending"} title={"Top Stories"} />
-
-            <NewsSection subheading={""} title={""} />
-
-            <ContactForm title='Share with us' topText='Do you have credible health news?' subHeading='' details='Please provide as many details as possible to help us understand and verify the information. Our editorial team will review your submission and get back to you propmtly' />
-
+            {/* News Sections */}
+            <NewsSection subheading="Breaking News" title="Latest Updates" />
+            <div className="my-12">
+              <NewsSection subheading="Pharmacy Innovations" title="Industry Trends" />
+            </div>
+            
+            {/* Contact Form */}
+            <div className="mt-16">
+              <ContactForm 
+                title="Share Health News With Us" 
+                details="Have credible health news or story tips? Submit them below and our editorial team will review your submission promptly."
+              />
+            </div>
         </div>
-
-
     </div>
-  )
+  );
 }
 
-export default page
+export default Page;
