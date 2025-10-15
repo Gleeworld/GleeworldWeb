@@ -9,17 +9,14 @@
   --dark-gray: #333333;
 }
 
+/* Remove any conflicting body styles */
 body {
-  background-color: var(--silver);
-  color: var(--dark-gray);
+  margin: 0;
+  padding: 0;
+  /* Remove any background-color rules here if they exist */
 }
 
-/* Smooth scrolling */
+/* Ensure smooth scrolling */
 html {
   scroll-behavior: smooth;
-}
-
-/* Custom gradients */
-.gradient-magneta-orange {
-  background: linear-gradient(135deg, var(--magneta), var(--orange));
 }
