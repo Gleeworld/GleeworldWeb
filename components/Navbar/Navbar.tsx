@@ -3,24 +3,26 @@
 import Image from "next/image"
 import { useState } from "react"
 import { FiMenu, FiX } from "react-icons/fi"
-import { useRouter } from "next/navigation"
+import { useRouter, usePathname } from "next/navigation"
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false)
   const router = useRouter()
+  const pathname = usePathname()
+  const isMedfinderPage = pathname.startsWith("/medfinderapp")
 
   const openWhatsAppChat = () => {
     window.open("https://wa.me/yourwhatsapplink", "_blank")
   }
 
   return (
-    <header className="w-full px-6 py-2"> {/* Reduced vertical padding from py-6 to py-2 */}
+    <header className="w-full px-6 py-2">
       <div className="max-w-7xl mx-auto flex items-center justify-between">
         
         {/* Logo and Links */}
         <div className="flex items-center space-x-20">
           <div 
-            className="relative h-24 w-64 cursor-pointer" // Larger logo
+            className="relative h-24 w-64 cursor-pointer"
             onClick={() => router.push("/")}
           >
             <Image
@@ -78,7 +80,12 @@ const Navbar = () => {
           </div>
 
           <button className="md:hidden text-gray-600" onClick={() => setMenuOpen(!menuOpen)}>
-            {menuOpen ? <FiX size={28} /> : <FiMenu size={28} />}
+            {/* Hide the X icon on the Medfinder App page */}
+            {menuOpen ? (
+              isMedfinderPage ? null : <FiX size={28} />
+            ) : (
+              <FiMenu size={28} />
+            )}
           </button>
         </div>
       </div>
