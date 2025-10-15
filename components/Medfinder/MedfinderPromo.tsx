@@ -1,13 +1,18 @@
 export default function MedfinderPromo() {
   return (
-    <section className="py-20 bg-gradient-to-r from-magneta to-orange"> {/* Back to orange gradient */}
+    <section 
+      className="py-20" 
+      style={{ 
+        background: 'linear-gradient(135deg, #E10075, #FF6B35)'
+      }}
+    >
       <div className="max-w-6xl mx-auto px-4">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           
-          {/* Text Content - WHITE TEXT for colored background */}
-          <div className="text-white"> {/* Changed back to white text */}
+          {/* Text Content */}
+          <div className="text-white">
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
-              Save time and money with <span className="text-silver">Medfinder</span>
+              Save time and money with <span style={{ color: '#F8F9FA' }}>Medfinder</span>
             </h2>
             <p className="text-xl mb-8 leading-relaxed opacity-90">
               Discover a simpler way to access the medicines you need. Medfinder connects you to nearby pharmacies, helping you save time, reduce costs, and get trusted care—fast and hassle-free. Experience affordability, convenience, and availability like never before. Get started today!
@@ -18,7 +23,17 @@ export default function MedfinderPromo() {
                 href="https://medfinder.com.ng" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="bg-white text-magneta px-8 py-4 rounded-full text-lg font-semibold hover:bg-silver transition-all duration-300 text-center"
+                className="px-8 py-4 rounded-full text-lg font-semibold transition-all duration-300 text-center"
+                style={{ 
+                  backgroundColor: '#FFFFFF',
+                  color: '#E10075'
+                }}
+                onMouseOver={(e) => {
+                  e.currentTarget.style.backgroundColor = '#F8F9FA';
+                }}
+                onMouseOut={(e) => {
+                  e.currentTarget.style.backgroundColor = '#FFFFFF';
+                }}
               >
                 Visit Medfinder.com.ng
               </a>
@@ -26,7 +41,19 @@ export default function MedfinderPromo() {
                 href="https://medfinder.com.ng/download" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="border-2 border-white text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-white hover:text-magneta transition-all duration-300 text-center"
+                className="border-2 px-8 py-4 rounded-full text-lg font-semibold transition-all duration-300 text-center"
+                style={{ 
+                  borderColor: '#FFFFFF',
+                  color: '#FFFFFF'
+                }}
+                onMouseOver={(e) => {
+                  e.currentTarget.style.backgroundColor = '#FFFFFF';
+                  e.currentTarget.style.color = '#E10075';
+                }}
+                onMouseOut={(e) => {
+                  e.currentTarget.style.backgroundColor = 'transparent';
+                  e.currentTarget.style.color = '#FFFFFF';
+                }}
               >
                 Download Medfinder App
               </a>
@@ -35,7 +62,13 @@ export default function MedfinderPromo() {
 
           {/* App Mockup/Image Placeholder */}
           <div className="flex justify-center">
-            <div className="bg-white bg-opacity-20 backdrop-blur-sm rounded-2xl p-8 border border-white border-opacity-30">
+            <div 
+              className="rounded-2xl p-8 border backdrop-blur-sm"
+              style={{
+                backgroundColor: 'rgba(255, 255, 255, 0.2)',
+                borderColor: 'rgba(255, 255, 255, 0.3)'
+              }}
+            >
               <div className="text-center text-white">
                 <div className="text-6xl mb-4">📱</div>
                 <h3 className="text-2xl font-bold mb-2">Medfinder App</h3>
