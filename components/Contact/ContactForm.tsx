@@ -1,14 +1,10 @@
 interface ContactFormProps {
   title?: string;
-  topText?: string;
-  subHeading?: string;
   details?: string;
 }
 
 export default function ContactForm({ 
   title = "Contact Us", 
-  topText = "Get in Touch",
-  subHeading = "We're Here to Help",
   details = "Reach out for any questions about our pharmacy services"
 }: ContactFormProps) {
   return (
@@ -60,15 +56,7 @@ export default function ContactForm({
             
             <button 
               type="submit"
-              className="bg-magneta text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-orange transition-all duration-300 transform hover:scale-105 w-full md:w-auto"
-              onMouseOver={(e) => {
-                e.currentTarget.style.transform = 'scale(1.05)';
-                e.currentTarget.style.backgroundColor = '#FF6B35';
-              }}
-              onMouseOut={(e) => {
-                e.currentTarget.style.transform = 'scale(1)';
-                e.currentTarget.style.backgroundColor = '#E10075';
-              }}
+              className="bg-magneta text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-orange transition-all duration-300 w-full md:w-auto"
             >
               Send Message
             </button>
