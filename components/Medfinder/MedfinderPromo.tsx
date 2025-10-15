@@ -1,38 +1,33 @@
 export default function MedfinderPromo() {
   return (
-    <section 
-      className="py-20" 
-      style={{ 
-        background: 'linear-gradient(135deg, #E10075, #FF6B35)'
-      }}
-    >
-      <div className="max-w-6xl mx-auto px-4">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+    <section style={{ background: '#FF6B35', padding: '80px 0' }}>
+      <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 16px' }}>
+        <div style={{ display: 'grid', gridTemplateColumns: '1fr', gap: '48px', alignItems: 'center' }}>
+          {/* For larger screens */}
+          <div style={{ display: 'none', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '48px', alignItems: 'center' }}>
+          </div>
           
-          {/* Text Content */}
-          <div className="text-white">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6">
+          <div style={{ color: 'white', textAlign: 'center' }}>
+            <h2 style={{ fontSize: '48px', fontWeight: 'bold', marginBottom: '24px' }}>
               Save time and money with <span style={{ color: '#F8F9FA' }}>Medfinder</span>
             </h2>
-            <p className="text-xl mb-8 leading-relaxed opacity-90">
-              Discover a simpler way to access the medicines you need. Medfinder connects you to nearby pharmacies, helping you save time, reduce costs, and get trusted care—fast and hassle-free. Experience affordability, convenience, and availability like never before. Get started today!
+            <p style={{ fontSize: '20px', marginBottom: '32px', opacity: 0.9 }}>
+              Discover a simpler way to access the medicines you need. Medfinder connects you to nearby pharmacies.
             </p>
             
-            <div className="flex flex-col sm:flex-row gap-4">
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '16px', justifyContent: 'center' }}>
               <a 
                 href="https://medfinder.com.ng" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="px-8 py-4 rounded-full text-lg font-semibold transition-all duration-300 text-center"
                 style={{ 
-                  backgroundColor: '#FFFFFF',
-                  color: '#E10075'
-                }}
-                onMouseOver={(e) => {
-                  e.currentTarget.style.backgroundColor = '#F8F9FA';
-                }}
-                onMouseOut={(e) => {
-                  e.currentTarget.style.backgroundColor = '#FFFFFF';
+                  backgroundColor: 'white',
+                  color: '#E10075',
+                  padding: '16px 32px',
+                  borderRadius: '9999px',
+                  fontWeight: '600',
+                  textDecoration: 'none',
+                  display: 'inline-block'
                 }}
               >
                 Visit Medfinder.com.ng
@@ -41,42 +36,20 @@ export default function MedfinderPromo() {
                 href="https://medfinder.com.ng/download" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="border-2 px-8 py-4 rounded-full text-lg font-semibold transition-all duration-300 text-center"
                 style={{ 
-                  borderColor: '#FFFFFF',
-                  color: '#FFFFFF'
-                }}
-                onMouseOver={(e) => {
-                  e.currentTarget.style.backgroundColor = '#FFFFFF';
-                  e.currentTarget.style.color = '#E10075';
-                }}
-                onMouseOut={(e) => {
-                  e.currentTarget.style.backgroundColor = 'transparent';
-                  e.currentTarget.style.color = '#FFFFFF';
+                  border: '2px solid white',
+                  color: 'white',
+                  padding: '16px 32px',
+                  borderRadius: '9999px',
+                  fontWeight: '600',
+                  textDecoration: 'none',
+                  display: 'inline-block'
                 }}
               >
                 Download Medfinder App
               </a>
             </div>
           </div>
-
-          {/* App Mockup/Image Placeholder */}
-          <div className="flex justify-center">
-            <div 
-              className="rounded-2xl p-8 border backdrop-blur-sm"
-              style={{
-                backgroundColor: 'rgba(255, 255, 255, 0.2)',
-                borderColor: 'rgba(255, 255, 255, 0.3)'
-              }}
-            >
-              <div className="text-center text-white">
-                <div className="text-6xl mb-4">📱</div>
-                <h3 className="text-2xl font-bold mb-2">Medfinder App</h3>
-                <p className="opacity-90">Your pharmacy companion</p>
-              </div>
-            </div>
-          </div>
-
         </div>
       </div>
     </section>
