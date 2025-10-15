@@ -1,24 +1,27 @@
 export default function MedfinderPromo() {
   return (
-    <section 
-      className="w-full py-20 text-white relative"
+    <section
+      className="relative w-full py-20 text-white isolate"
       style={{
-        background: 'linear-gradient(135deg, #FF6B35, #FF8C42)'
+        background: 'linear-gradient(135deg, #FF6B35, #FF8C42)',
       }}
     >
       <div className="max-w-6xl mx-auto px-4">
         <div className="flex flex-col lg:flex-row items-center gap-12">
           
+          {/* Text Section */}
           <div className="flex-1 text-center lg:text-left">
-            <h2 className="text-4xl md:text-5xl font-extrabold mb-6">
-              Save time and money with <span className="text-white underline decoration-white/40">Medfinder</span>
+            <h2 className="text-4xl md:text-5xl font-extrabold mb-6 leading-tight">
+              Save time and money with{' '}
+              <span className="underline decoration-white/40">Medfinder</span>
             </h2>
+
             <p className="text-xl mb-8 leading-relaxed text-white/90">
-              Discover a simpler way to access the medicines you need. Medfinder connects you to nearby pharmacies, helping you save time, reduce costs, and get trusted care—fast and hassle-free. Experience affordability, convenience, and availability like never before. Get started today!
+              Discover a simpler way to access the medicines you need. Medfinder connects you to nearby pharmacies, helping you save time, reduce costs, and get trusted care — fast and hassle-free. Experience affordability, convenience, and availability like never before. Get started today!
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-              <a 
+              <a
                 href="https://medfinder.com.ng"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -26,7 +29,8 @@ export default function MedfinderPromo() {
               >
                 Visit Medfinder.com.ng
               </a>
-              <a 
+
+              <a
                 href="https://medfinder.com.ng/download"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -37,6 +41,7 @@ export default function MedfinderPromo() {
             </div>
           </div>
 
+          {/* Mockup Card */}
           <div className="flex-1 flex justify-center">
             <div className="bg-white/10 rounded-2xl p-8 border border-white/30 shadow-2xl backdrop-blur-sm">
               <div className="text-center text-white">
