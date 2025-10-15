@@ -1,3 +1,5 @@
+import Image from 'next/image';
+
 export default function MedfinderPromo() {
   return (
     <section className="py-20 bg-gradient-to-r from-[#FF6B35] to-[#FF8C42]">
@@ -33,14 +35,16 @@ export default function MedfinderPromo() {
             </div>
           </div>
 
-          {/* App Mockup/Image Placeholder - Restore original styling */}
+          {/* App Image - Using your existing mobile/tech images */}
           <div className="flex justify-center">
-            <div className="bg-white bg-opacity-20 backdrop-blur-sm rounded-2xl p-8 border border-white border-opacity-30">
-              <div className="text-center text-white">
-                <div className="text-6xl mb-4">📱</div>
-                <h3 className="text-2xl font-bold mb-2">Medfinder App</h3>
-                <p className="opacity-90">Your pharmacy companion</p>
-              </div>
+            <div className="relative">
+              <Image 
+                src="/Homepage 1.png"  // Using your mobile app image
+                alt="Medfinder App - Find medications easily" 
+                width={280}
+                height={560}
+                className="rounded-2xl shadow-2xl"
+              />
             </div>
           </div>
 
