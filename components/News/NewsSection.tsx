@@ -11,7 +11,7 @@ export default function NewsSection({ subheading, title }: Props) {
     {
       id: '1',
       title: 'Gleeworld Pharmacy launches Medfinder app to connect users with local pharmacies.',
-      description: 'Leading the way in innovative healthcare solutions, Gleeworld Pharmacy proudly introduces the MedFinder app, setting a new...',
+      description: 'Leading the way in innovative healthcare solutions, Gleeworld Pharmacy proudly introduces the Medfinder app, setting a new...',
       image: '/Frame 427319431 (3).png',
     },
     {
