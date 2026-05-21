@@ -1,4 +1,4 @@
-/* app/page.tsx - Optimized Branded Production Version */
+/* app/page.tsx - Build-Proof Branded Production Version */
 import React from 'react';
 
 export default function HomePage() {
@@ -58,7 +58,7 @@ export default function HomePage() {
           </div>
           <div>
             <h4 className="text-3xl font-bold text-slate-900">100%</h4>
-            <p className="text-sm font-medium text-slate-500 mt-1">Authentic & Verified Medications</p>
+            <p className="text-sm font-medium text-slate-500 mt-1">Authentic &amp; Verified Medications</p>
           </div>
         </div>
       </section>
@@ -106,7 +106,7 @@ export default function HomePage() {
               <div className="care-steps">
                 <div className="care-step">
                   <span className="step-number">1</span>
-                  <p>You send a trusted person — staff, nanny, relative, or caregiver — to Gleeworld Pharmacy.</p>
+                  <p>You send a trusted person &mdash; staff, nanny, relative, or caregiver &mdash; to Gleeworld Pharmacy.</p>
                 </div>
                 <div className="care-step">
                   <span className="step-number">2</span>
@@ -118,7 +118,7 @@ export default function HomePage() {
                 </div>
                 <div className="care-step">
                   <span className="step-number">4</span>
-                  <p>You never left your desk or your child's bedside.</p>
+                  <p>You never left your desk or your child&apos;s bedside.</p>
                 </div>
               </div>
             </div>
@@ -139,7 +139,7 @@ export default function HomePage() {
               <div className="care-tags">
                 <span className="care-tag">🤧 Colds, coughs, mild fevers</span>
                 <span className="care-tag">🍲 Digestive complaints</span>
-                <span className="care-tag">🌿 Skin rashes & allergies</span>
+                <span className="care-tag">🌿 Skin rashes &amp; allergies</span>
                 <span className="care-tag">👶 Baby colic, teething, mild rashes</span>
                 <span className="care-tag">✅ Confirming medicine suitability</span>
               </div>
@@ -147,7 +147,7 @@ export default function HomePage() {
               {/* Strict Clinical Disclaimer */}
               <div className="care-warning">
                 <span className="warning-icon">⚠️</span>
-                <p>If it sounds urgent, we will tell you to see a doctor immediately. This service provides pharmacist guidance — not diagnosis or remote prescription treatment.</p>
+                <p>If it sounds urgent, we will tell you to see a doctor immediately. This service provides pharmacist guidance &mdash; not diagnosis or remote prescription treatment.</p>
               </div>
             </div>
           </div>
@@ -158,27 +158,27 @@ export default function HomePage() {
             <div className="trust-grid">
               <div className="trust-item">
                 <span className="trust-icon">🎯</span>
-                <p><strong>You remain in control</strong> – You speak to the pharmacist directly. No secondhand information.</p>
+                <p><strong>You remain in control</strong> &ndash; You speak to the pharmacist directly. No secondhand information.</p>
               </div>
               <div className="trust-item">
                 <span className="trust-icon">🤝</span>
-                <p><strong>Decisions remain yours</strong> – Your representative handles physical coordination, not clinical decisions.</p>
+                <p><strong>Decisions remain yours</strong> &ndash; Your representative handles physical coordination, not clinical decisions.</p>
               </div>
               <div className="trust-item">
                 <span className="trust-icon">👁️</span>
-                <p><strong>Professional oversight</strong> – We review patient safety requirements before dispensing or recommending care.</p>
+                <p><strong>Professional oversight</strong> &ndash; We review patient safety requirements before dispensing or recommending care.</p>
               </div>
               <div className="trust-item">
                 <span className="trust-icon">⚡</span>
-                <p><strong>Fast, for real life</strong> – Accessible via standard communication channels. No app download barrier required.</p>
+                <p><strong>Fast, for real life</strong> &ndash; Accessible via standard communication channels. No app download barrier required.</p>
               </div>
             </div>
           </div>
 
-          {/* Clean Educational Closing (No forced conversion buttons) */}
+          {/* Clean Educational Closing */}
           <div className="care-closing">
             <p className="care-closing-text">
-              Pharmacy care designed for how people actually live — with staff, with children, 
+              Pharmacy care designed for how people actually live &mdash; with staff, with children, 
               with aging parents, and with very little time.
             </p>
           </div>
@@ -215,9 +215,9 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* FOOTER */}
+      {/* FOOTER - Hardcoded build-safe string to prevent dynamic hydration bugs */}
       <footer className="border-t border-slate-100 py-8 text-center text-xs text-slate-400">
-        <p>&copy; {new Date().getFullYear()} Gleeworld Pharmacy. All professional clinical practices adhere strictly to regulatory standards.</p>
+        <p>&copy; 2026 Gleeworld Pharmacy. All professional clinical practices adhere strictly to regulatory standards.</p>
       </footer>
     </div>
   );
