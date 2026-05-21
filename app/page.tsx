@@ -15,12 +15,7 @@ export default function Page() {
       <Stats />
       <NewsSection title="Healthcare News" subheading="Stay Informed" />
       <MedfinderPromo />
-      <ContactForm 
-        title="Contact Us" 
-        topText="Get in Touch" 
-        subHeading="We're Here to Help" 
-        details="Reach out for any questions about our pharmacy services"  
-      />
+      <ContactForm />
     </main>
   );
 }
