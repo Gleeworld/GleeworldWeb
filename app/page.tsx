@@ -1,4 +1,4 @@
-import FlowHero from "@/components/Hero/flowHero";
+import FlowHero from "@/components/Hero/FlowHero";
 import Services from "@/components/Services/services";
 import Stats from "@/components/Stats/stats";
 import NewsSection from "@/components/News/NewsSection";
